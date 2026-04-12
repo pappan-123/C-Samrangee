@@ -1,0 +1,126 @@
+1. Escape Character (Hard)
+
+Q1.
+#include <stdio.h>
+int main() {
+printf("ABC\b\bD\n");
+return 0;
+}
+Predict the exact output.
+
+---
+
+Q2.
+#include <stdio.h>
+int main() {
+printf("123\rAB");
+return 0;
+}
+What will be printed and why?
+
+---
+
+Q3.
+#include <stdio.h>
+int main() {
+printf("Hello\tWorld\b\b!");
+return 0;
+}
+Explain the final output step by step.
+
+---
+
+Q4.
+#include <stdio.h>
+int main() {
+printf("Line1\nLine2\rXYZ");
+return 0;
+}
+What is the exact output?
+
+---
+
+Q5.
+#include <stdio.h>
+int main() {
+printf("A\B\C\n");
+return 0;
+}
+How many backslashes will be printed and why?
+
+---
+
+2. Preprocessor (1 Question)
+
+Q6.
+#include <stdio.h>
+#define MUL(a,b) a*b
+
+int main() {
+int x = MUL(2+3, 4+1);
+printf("%d", x);
+return 0;
+}
+Predict output and explain macro expansion issue.
+
+---
+
+3. Data Type (1 Question)
+
+Q7.
+#include <stdio.h>
+int main() {
+printf("%lu %lu", sizeof(5), sizeof(5.0));
+return 0;
+}
+Explain the output and datatype reasoning.
+
+---
+
+4. Keywords / Identifiers / Constants (Remaining Questions)
+
+Q8.
+#include <stdio.h>
+int main() {
+int for = 10;
+printf("%d", for);
+return 0;
+}
+Will this compile? Why?
+
+---
+
+Q9.
+#include <stdio.h>
+int main() {
+int _value = 10;
+int 2value = 20;
+printf("%d %d", _value, 2value);
+return 0;
+}
+Identify errors related to identifiers.
+
+---
+
+Q10.
+#include <stdio.h>
+int main() {
+const int x = 10;
+x = 20;
+printf("%d", x);
+return 0;
+}
+Will this compile? Explain constant behavior.
+
+---
+Q11.
+#include <stdio.h>
+
+int main() {
+    int return = 10;
+    printf("%d", return);
+    return 0;
+}
+
+Will it compile? Why?
+---

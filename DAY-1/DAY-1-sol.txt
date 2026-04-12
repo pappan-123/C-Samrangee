@@ -1,0 +1,130 @@
+✅ 1. Escape Characters
+🔹 Q1
+printf("ABC\b\bD\n");
+👉 Step-by-step:
+"ABC" → prints: ABC
+\b → removes C
+\b → removes B
+D → prints D
+✅ Final Output:
+ADC
+
+--------------------------
+🔹 Q2
+printf("123\rAB");
+👉 Step-by-step:
+"123" → prints: 123
+\r → cursor moves to start of same line
+"AB" → overwrites first two characters
+✅ Final Output:
+AB3
+
+------------------------------
+🔹 Q3
+printf("Hello\tWorld\b\b!");
+👉 Step-by-step:
+"Hello" → prints
+\t → adds tab space
+"World" → prints
+\b → removes d
+\b → removes l
+"!" → prints
+✅ Final Output:
+Hello    Wor!d
+
+(Spaces depend on tab width, usually 4 or 8)
+---------------------------------------
+🔹 Q4
+printf("Line1\nLine2\rXYZ");
+👉 Step-by-step:
+Line1 → printed
+\n → new line
+Line2 → printed
+\r → cursor to start of second line
+XYZ → overwrites first 3 chars of Line2
+✅ Final Output:
+Line1
+XYZe2
+-----------------------------------
+🔹 Q5 ❗ (Tricky / Invalid Escape)
+printf("A\B\C\n");
+🚨 Problem:
+\B and \C are invalid escape sequences
+👉 Behavior:
+Compiler may:
+Give warning ⚠️
+Treat \B as B, \C as C
+So string becomes:
+ABC
+✅ Final Output:
+ABC
+⚠️ Important:
+
+Correct way to print backslash:
+
+printf("A\\B\\C\n");
+✅ 2. Preprocessor
+-------------------------------
+🔹 Q6
+#define MUL(a,b) a*b
+int x = MUL(2+3, 4+1);
+👉 Macro Expansion:
+2+3*4+1
+👉 Operator precedence:
+= 2 + (3*4) + 1
+= 2 + 12 + 1
+= 15
+❌ Expected (wrong assumption):
+(2+3)*(4+1) = 25
+✅ Final Output:
+15
+✔️ Fix:
+#define MUL(a,b) ((a)*(b))
+✅ 3. Data Type
+--------------------------------
+🔹 Q7
+printf("%lu %lu", sizeof(5), sizeof(5.0));
+👉 Analysis:
+5 → int
+5.0 → double
+Typical sizes:
+int → 4 bytes
+double → 8 bytes
+✅ Output:
+4 8
+🔥 Important:
+'A' → int (not char!)
+5.0 → double by default
+✅ 4. Keywords / Identifiers / Constants
+-------------------------------------
+🔹 Q8
+int for = 10;
+❌ Error:
+for is a keyword
+✅ Result:
+❌ Compilation error
+----------------------------------
+🔹 Q9
+int _value = 10;   // valid
+int 2value = 20;   // invalid
+👉 Rules:
+Cannot start with number ❌
+Can start with _ ✔️
+✅ Result:
+_value → OK
+2value → ❌ Compilation error
+----------------------------------
+🔹 Q10
+const int x = 10;
+x = 20;
+❌ Error:
+x is read-only
+✅ Result:
+❌ Compilation error
+--------------------------------
+🔹 Q11
+int return = 10;
+❌ Error:
+return is a keyword
+✅ Result:
+❌ Compilation error
