@@ -1,0 +1,191 @@
+==============================================================
+DAY-3: PROGRAMMING FUNDAMENTALS & ALGORITHMS (PRACTICE SET)
+==============================================================
+
+1. Which of the following best differentiates a program from an instruction?
+A) An instruction is hardware-dependent, while a program is strictly software.
+B) A program is a single step, while an instruction is the entire file.
+C) An instruction is a single executable command, whereas a program is a cohesive sequence of instructions.
+D) Programs are written in high-level languages, while instructions are written in assembly.
+
+2. A student writes a program using short mnemonics like "MOV", "ADD", and "SUB". What is the most accurate classification of this language?
+A) High-Level Language
+B) Machine Language
+C) Non-Procedural Language
+D) Assembly Language
+
+3. Which of the following is an absolute violation of Structured Programming principles?
+A) Using a 'while' loop instead of a 'for' loop.
+B) Nesting an 'if-else' statement more than three levels deep.
+C) Utilizing a GOTO statement to jump across the program execution path.
+D) Passing variables between multiple procedures.
+
+4. In Object-Oriented Programming, what concept specifically prevents external code from directly modifying an object's internal data?
+A) Polymorphism
+B) Encapsulation
+C) Inheritance
+D) Instantiation
+
+5. SQL is an example of a Non-Procedural language because:
+A) It specifies exactly how the computer should search the database step-by-step.
+B) It operates without the need for an underlying compiler.
+C) It specifies "what" result is desired without dictating the step-by-step retrieval process.
+D) It cannot handle loops or mathematical iterations.
+
+6. An algorithm uses a step stating "Add 5 or 6 to variable X." Which characteristic of an algorithm does this step violate?
+A) Finiteness
+B) Definiteness
+C) Effectiveness
+D) Input
+
+7. An algorithm is designed to calculate pi to an infinite number of decimal places. It runs continuously without stopping. Which characteristic does this violate?
+A) Finiteness
+B) Definiteness
+C) Output
+D) Effectiveness
+
+8. What is the most critical component that must be present in a recursive algorithm to prevent a system crash?
+A) A looping structure like 'while' or 'for'.
+B) A local variable counter.
+C) A Base Case that terminates the recursion.
+D) An array to store previous function calls.
+
+9. In a standard flowchart, what must be true about the Diamond (Decision) symbol?
+A) It can have multiple input flowlines but only one output flowline.
+B) It must have exactly two output flowlines representing True/False or Yes/No.
+C) It is used strictly for mathematical processing and equations.
+D) It is used to indicate the start or end of the flowchart.
+
+10. A student uses a Parallelogram in their flowchart. What operation are they representing?
+A) "Sum = A + B"
+B) "Is A > B?"
+C) "Print Sum"
+D) "End Program"
+
+11. Why is a High-Level Language considered "abstracted"?
+A) Because it does not run on real hardware, only virtual machines.
+B) Because it hides complex hardware details like memory addressing and CPU registers from the programmer.
+C) Because it uses abstract mathematical concepts like Big-O notation.
+D) Because the code cannot be read by humans without a compiler.
+
+12. Which of the following is a rule of Pseudocode?
+A) It must compile cleanly on a C or Java compiler.
+B) It must use strict semi-colons and curly braces for scope.
+C) It relies on language-independent, plain-English logic and indentation.
+D) It must not contain any loops or mathematical operators.
+
+13. Which scenario perfectly describes a "Class" vs an "Object" in OOP?
+A) A Class is "Toyota Corolla", an Object is "Car".
+B) A Class is the blueprint "Car", an Object is "John's red Toyota parked outside".
+C) A Class is the engine, an Object is the steering wheel.
+D) A Class is the data variable, an Object is the function that modifies it.
+
+14. Procedural programming organizes code around ___, while Object-Oriented programming organizes code around ___.
+A) Logic/Functions ; Data/Objects
+B) Data/Objects ; Logic/Functions
+C) Machine Code ; High-Level Syntax
+D) User Input ; Database Output
+
+15. What tool is strictly required to convert Assembly Language into Machine Code (1s and 0s)?
+A) Compiler
+B) Interpreter
+C) Assembler
+D) Linker
+
+16. Which of the following is NOT one of the three basic control structures of Structured Programming?
+A) Sequence
+B) Recursion
+C) Iteration
+D) Selection (Branching)
+
+17. An algorithm's "Effectiveness" characteristic means:
+A) It runs in O(1) time complexity.
+B) Every step is basic enough to be carried out manually with pen and paper.
+C) It uses the least amount of memory possible.
+D) It correctly handles all potential user errors.
+
+18. If a flowchart flowline points UPWARDS against the normal top-to-bottom flow, what programming structure does this most likely represent?
+A) A sequence
+B) An 'if' statement
+C) An 'else' statement
+D) A loop (iteration)
+
+19. A recursive algorithm solves a problem by:
+A) Calling a separate external function repeatedly.
+B) Using a 'for' loop to iterate over an array.
+C) Breaking the problem down into smaller instances of the same problem.
+D) Avoiding functions entirely to save memory.
+
+20. What is the fundamental difference between Low-Level Machine Code and High-Level Languages?
+A) Machine code is binary hardware instructions; High-level is human-readable logic.
+B) Machine code runs slower than high-level languages.
+C) Machine code can only do math; High-level can do graphics.
+D) Machine code is portable across different CPUs; High-level is CPU-specific.
+
+
+--------------------------------------------------------------
+PART B: FLOWCHART & PSEUDOCODE PRACTICE PROBLEMS
+--------------------------------------------------------------
+
+Draw the FlowChart:
+
+1.Find the largest among three different numbers entered by the user.
+2.Find all the roots of a quadratic equation ax2+bx+c=0
+3.Draw a flowchart to check whether a student has passed or failed based on marks. If the marks are greater than or equal to 40, display ‘Passed’; otherwise, display ‘Failed’
+
+
+Write the Psedo Code:
+
+1.
+#include <stdio.h>
+int main() {
+int n, f = 1, i;
+// Ask for user input
+printf("Please enter a non-negative number: ");
+scanf("%d", &n);
+// Check if the input is negative
+if (n < 0) {
+printf("Error: Factorial is not defined for negative numbers.\n");
+} else {
+// Calculate factorial
+for (i = 1; i <= n; i++) {
+    f = f * i;
+}
+// Display the result
+printf("The factorial of %d is %d\n", n, f);
+}
+return 0;
+}
+
+2.
+#include <stdio.h>
+int main() {
+int number;
+// Ask for user input
+printf("Enter a number: ");
+scanf("%d", &number);
+// Use ternary operator to check if the number is even or odd
+(number % 2 == 0) ? printf("The number is even\n") : printf("The number is odd\n");
+return 0;
+}
+
+3.
+#include <stdio.h>
+
+int main() {
+    int marks;
+
+    // Take input from user
+    printf("Enter your marks: ");
+    scanf("%d", &marks);
+
+    // Condition check
+    if (marks >= 40) {
+        printf("Passed");
+    } else {
+        printf("Failed");
+    }
+
+    return 0;
+}
+ 
