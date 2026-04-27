@@ -1,0 +1,216 @@
+1. An algorithm takes an integer 'n' from the user and runs a loop exactly 10,000 times to calculate a math formula. What is the Time Complexity of this algorithm?
+A) O(n)
+B) O(10000)
+C) O(1)
+D) O(n^2)
+
+2. A student writes a loop to calculate the factorial of a number 'n'. They use two variables: 'int i' for the loop counter and 'int fact' to store the result. What is the Space Complexity of this algorithm?
+A) O(n) because the loop runs 'n' times.
+B) O(1) because the memory used does not grow as 'n' grows.
+C) O(n) because the factorial result gets very large.
+D) O(2) because two variables are used.
+
+3. Consider the following code:
+   int marks = 95;
+   if (marks >= 50) printf("Pass ");
+   else if (marks >= 90) printf("Excellent ");
+What will be the output?
+A) Pass Excellent
+B) Excellent
+C) Pass
+D) Compilation Error
+
+4. What is the output of the following trap code?
+   int x = 0;
+   if (x = 0) {
+       printf("True");
+   } else {
+       printf("False");
+   }
+A) True
+B) False
+C) Compilation Error
+D) True False
+
+5. Identify the exact output of this code snippet:
+   int a = 5;
+   if (a > 10);
+   {
+       printf("Hello");
+   }
+A) Hello
+B) No output
+C) Compilation Error due to semicolon
+D) Infinite loop
+
+6. Which asymptotic notation is used to describe the exact, tight bound of an algorithm (when the best-case and worst-case time complexities are the same rate)?
+A) Big O (O)
+B) Big Omega (Ω)
+C) Big Theta (Θ)
+D) Little o
+
+7. Look at this dangling else trap:
+   int a = 5, b = 10;
+   if (a == 5)
+       if (b == 5)
+           printf("A");
+   else
+       printf("B");
+What will this code print?
+A) A
+B) B
+C) No output
+D) Compilation Error
+
+8. What happens when this loop is executed?
+   int i = 1;
+   while (i = 5) {
+       printf("%d ", i);
+       i++;
+   }
+A) Prints 1 2 3 4 5
+B) Prints 5 once
+C) Results in an infinite loop printing 6 continuously
+D) Results in an infinite loop printing 5 continuously
+
+9. In a 'do-while' loop, what is strictly required at the very end of the syntax that is NOT required in a 'while' loop?
+A) A break statement
+B) Curly braces {}
+C) A semicolon ;
+D) An increment operator ++
+
+10. Look closely at this 'for' loop trap:
+    int i;
+    for (i = 1; i <= 3; i++);
+    printf("%d", i);
+What is the output?
+A) 123
+B) 1 2 3
+C) 3
+D) 4
+
+11. A loop has the condition: for(float f = 0.0; f != 1.0; f += 0.1). Why is this considered dangerous in C?
+A) Floats cannot be used in for loops.
+B) Due to precision issues, 'f' might become 0.999999 and never exactly equal 1.0, causing an infinite loop.
+C) The compiler will round 0.1 to 0, causing an infinite loop.
+D) It will run exactly 10 times with no issues.
+
+12. What is the worst-case Time Complexity (Big O) of a nested loop where the outer loop runs 'n' times and the inner loop runs 'n' times?
+A) O(n)
+B) O(2n)
+C) O(n^2)
+D) O(1)
+
+13. You have an algorithm that searches for a specific number from 1 to 'n'. It stops immediately if it finds the number. In the best-case scenario (it finds the number on the first try), how would you represent the time complexity?
+A) O(n)
+B) Ω(1)
+C) Θ(1)
+D) O(1)
+
+14. Examine the 'continue' trap:
+    int count = 0;
+    while (count < 3) {
+        count++;
+        if (count == 2) continue;
+        printf("%d ", count);
+    }
+What is the output?
+A) 1 2 3
+B) 1 3
+C) 1 followed by an infinite loop
+D) 2 3
+
+15. Examine the 'continue' trap inside a FOR loop:
+    for (int i = 1; i <= 3; i++) {
+        if (i == 2) continue;
+        printf("%d ", i);
+    }
+What is the output?
+A) 1 2 3
+B) 1 3
+C) 1 followed by an infinite loop
+D) Compilation Error
+
+16. Why does the code in Q14 finish, but putting the 'count++' AFTER the 'continue' statement in a while loop cause an infinite loop?
+A) Because 'continue' skips the rest of the loop body, meaning the variable would never increment.
+B) Because 'continue' resets the variable to 0.
+C) Because 'while' loops don't support 'continue'.
+D) Because the compiler moves the increment operator automatically.
+
+17. What is the output of the following multiple-variable loop?
+    for (int x = 0, y = 3; x < y; x++, y--) {
+        printf("*");
+    }
+A) *
+B) **
+C) ***
+D) ****
+
+18. If you forget to initialize the variable in a loop (e.g., int i; while(i < 5)), what happens?
+A) The compiler automatically sets 'i' to 0.
+B) The program uses whatever garbage value was left in memory, leading to unpredictable behavior.
+C) The loop runs exactly 5 times.
+D) The program assigns 'i' to 1.
+
+19. Which of the following conditions creates an infinite loop?
+A) for(;;)
+B) while(1)
+C) for(int i = 1; i > 0; i++)
+D) All of the above
+
+20. A program uses a 'switch' statement to check a variable. Which of the following branching structures is 'switch' most closely equivalent to?
+A) A single if statement
+B) A while loop
+C) A chained if-else if-else structure checking equality
+D) A nested do-while loop
+
+
+--------------------------------------------------------------
+Instructions: Identify the logical traps in these programs and rewrite them correctly.
+--------------------------------------------------------------
+
+PRACTICE 1:
+// The goal is to print even numbers from 2 to 10 using a while loop.
+// However, the student's code causes an INFINITE LOOP. 
+// Fix the logic without changing it to a 'for' loop.
+int i = 1;
+while (i <= 10) {
+    if (i % 2 != 0) {
+        continue; 
+    }
+    printf("%d ", i);
+    i++;
+}
+
+
+PRACTICE 2:
+// The goal is:
+// If 'a' is 10 and 'b' is 20, print "Jackpot".
+// If 'a' is 10 but 'b' is NOT 20, print "Halfway".
+// If 'a' is NOT 10, print "Loser".
+// The code below has multiple traps (= vs ==) and a dangling else. Fix it using proper braces.
+int a = 10, b = 5;
+if (a = 10)
+    if (b = 20)
+        printf("Jackpot
+");
+else
+    printf("Loser
+");
+
+
+PRACTICE 3:
+// Write a program that checks if a given integer 'N' (e.g., N = 29) is a Prime Number.
+// Constraints: 
+// 1. You must use a loop.
+// 2. Space Complexity MUST be O(1) (Do not use arrays).
+// 3. Time Complexity optimization: Do NOT loop all the way to 'N'. You only need to loop up to N/2 to verify if it's prime, and you must use a 'break' statement the moment you find a divisor to save time.
+
+
+PRACTICE 4:
+// Write a nested loop (a loop inside a loop) to print the following pattern exactly.
+// Do not hardcode the numbers in a single printf. Use the loop variables 'i' and 'j'.
+1
+1 2
+1 2 3
+1 2 3 4

@@ -1,0 +1,103 @@
+--------------------------------------------------------------
+QUESTIONS
+--------------------------------------------------------------
+
+Q1.
+int a, b;
+a = 1, 2, 3;
+b = (1, 2, 3);
+// What are the values of 'a' and 'b'?
+
+Q2.
+int result = 10 > 5 > 2;
+// What is the value of 'result'?
+
+Q3.
+int a = 0, b = 5, c;
+c = a++ && ++b;
+// What are the values of 'a', 'b', and 'c' after execution?
+
+Q4.
+int x = 1, y = 5, z;
+z = x-- || --y;
+// What are the values of 'x', 'y', and 'z' after execution?
+
+Q5.
+int m = 10;
+m *= 2 + 3;
+// What is the value of 'm'?
+
+Q6.
+int out = printf("%d", printf("Hello"));
+// What is printed to the screen, and what is the value of 'out'?
+
+Q7.
+int a, b, count;
+// Assume the user types: "15 xyz" and presses Enter.
+count = scanf("%d %d", &a, &b);
+// What is the value of 'count'?
+
+Q8.
+int p = -10 % 3;
+int q = 10 % -3;
+// What are the values of 'p' and 'q'?
+
+Q9.
+float f1 = 5 / 2;
+float f2 = (float)(5 / 2);
+float f3 = (float)5 / 2;
+// What are the values of f1, f2, and f3?
+
+Q10.
+int a = 5;
+int res = !a == 0;
+// What is the value of 'res'?
+
+Q11.
+float f = 5 > 2 ? 10 : 10.5;
+// What is the exact value stored in 'f'?
+
+Q12. 
+int a = 5, b = 10, c;
+c = (a == 5) ? a++ : b++;
+// What are the values of 'a', 'b', and 'c'?
+
+Q13.
+int x = 10, y = 20, z = 30;
+int max = x > y ? x : y > z ? y : z;
+// What is the value of 'max'?
+
+Q14.
+int a = 5, res;
+res = (a = 0) || (a = 10);
+// What are the values of 'a' and 'res'?
+
+Q15.
+int res = 10 + 5 * 2 / 2 - 1;
+// What is the value of 'res'?
+
+Q16.
+// What does this specific line print?
+printf("%d", (10, 20, 30));
+
+Q17.
+int a = -1;
+unsigned int b = 1;
+int res = a < b;
+// What is the value of 'res' (1 for true, 0 for false)?
+
+Q18.
+int i = 5, j;
+j = i++ + i++;
+// What is the value of 'j'?
+
+Q19.
+int a = 5;
+int x = ++a + 5; 
+int y = a++ + 5; 
+// What are the values of 'a', 'x', and 'y' executed sequentially?
+
+Q20.
+int num = 42;
+// What exactly is printed by this line (note the spaces/zeros)?
+printf("[%05d] [%-5d]", num, num);

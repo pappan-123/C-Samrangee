@@ -1,0 +1,286 @@
+--------------------------------------------------------------
+QUESTIONS
+--------------------------------------------------------------
+
+Q1. Precedence of Comma vs Assignment
+int a, b;
+a = 1, 2, 3;
+b = (1, 2, 3);
+// What are the values of 'a' and 'b'?
+
+Q2. Relational Operator Chaining
+int result = 10 > 5 > 2;
+// What is the value of 'result'?
+
+Q3. Short-Circuiting (Logical AND)
+int a = 0, b = 5, c;
+c = a++ && ++b;
+// What are the values of 'a', 'b', and 'c' after execution?
+
+Q4. Short-Circuiting (Logical OR)
+int x = 1, y = 5, z;
+z = x-- || --y;
+// What are the values of 'x', 'y', and 'z' after execution?
+
+Q5. Compound Assignment Precedence
+int m = 10;
+m *= 2 + 3;
+// What is the value of 'm'?
+
+Q6. printf Return Value
+int out = printf("%d", printf("Hello"));
+// What is printed to the screen, and what is the value of 'out'?
+
+Q7. scanf Return Value
+int a, b, count;
+// Assume the user types: "15 xyz" and presses Enter.
+count = scanf("%d %d", &a, &b);
+// What is the value of 'count'?
+
+Q8. Modulo with Negatives
+int p = -10 % 3;
+int q = 10 % -3;
+// What are the values of 'p' and 'q'?
+
+Q9. Integer Division and Explicit Casting
+float f1 = 5 / 2;
+float f2 = (float)(5 / 2);
+float f3 = (float)5 / 2;
+// What are the values of f1, f2, and f3?
+
+Q10. Logical NOT vs Equality Precedence
+int a = 5;
+int res = !a == 0;
+// What is the value of 'res'?
+
+Q11. Ternary Operator Return Type Promotion
+float f = 5 > 2 ? 10 : 10.5;
+// What is the exact value stored in 'f'?
+
+Q12. Post-Increment in Ternary
+int a = 5, b = 10, c;
+c = (a == 5) ? a++ : b++;
+// What are the values of 'a', 'b', and 'c'?
+
+Q13. Nested Ternary Operators
+int x = 10, y = 20, z = 30;
+int max = x > y ? x : y > z ? y : z;
+// What is the value of 'max'?
+
+Q14. Assignment within Logical Expression
+int a = 5, res;
+res = (a = 0) || (a = 10);
+// What are the values of 'a' and 'res'?
+
+Q15. Precedence of Arithmetic Operators
+int res = 10 + 5 * 2 / 2 - 1;
+// What is the value of 'res'?
+
+Q16. Comma Operator in a Function Call
+// What does this specific line print?
+printf("%d", (10, 20, 30));
+
+Q17. Implicit Type Promotion in Comparison
+int a = -1;
+unsigned int b = 1;
+int res = a < b;
+// What is the value of 'res' (1 for true, 0 for false)?
+
+Q18. Recognizing Undefined Behavior
+int i = 5, j;
+j = i++ + i++;
+// What is the value of 'j'?
+
+Q19. Pre/Post Increment with Addition
+int a = 5;
+int x = ++a + 5; 
+int y = a++ + 5; 
+// What are the values of 'a', 'x', and 'y' executed sequentially?
+
+Q20. Tricky Formatted Output
+int num = 42;
+// What exactly is printed by this line (note the spaces/zeros)?
+printf("[%05d] [%-5d]", num, num);
+
+
+--------------------------------------------------------------
+ANSWERS & EXPLANATIONS
+--------------------------------------------------------------
+
+A1. a = 1, b = 3
+Rule: Assignment (=) has higher precedence than the comma (,). 
+Step-by-step for 'a': The expression is parsed as (a = 1), 2, 3. 'a' gets 1.
+Step-by-step for 'b': Parentheses force the comma operator to evaluate first. (1, 2, 3) evaluates from left to right, returning the rightmost value (3). b = 3.
+
+A2. result = 0
+Rule: Relational operators associate from left to right.
+Step-by-step: (10 > 5) evaluates to 1 (True). The expression becomes 1 > 2. This evaluates to 0 (False).
+
+A3. a = 1, b = 5, c = 0
+Rule: Short-circuiting of Logical AND (&&).
+Step-by-step: 'a++' uses the original value of 'a' (0) for the condition, then increments 'a' to 1. Because the left side of && is 0 (False), the right side (++b) is SKIPPED completely. 'b' remains 5. The result of (0 && ...) is 0, so 'c' becomes 0.
+
+ E.g: 
+1. c = ++a && ++b;
+
+Step 1: Evaluate ++a (pre-increment)
+++a → increment first, then use
+a = 1
+Expression value = 1 (true)
+
+
+Step 2: Apply &&
+Left side = 1 → true
+👉 So right side WILL be evaluated
+
+Step 3: Evaluate ++b
+b = 6
+Expression value = 1 (true)
+
+Step 4: Final result
+1 && 1 = 1
+
+a = 1
+b = 6
+c = 1
+
+
+2.c = a++ || ++b;
+
+Step 1: Evaluate a++ (post-increment)
+Use value → 0
+Then increment → a = 1
+
+So:
+
+Left side = 0 (false)
+
+Step 2: Apply || (Logical OR)
+Rule:
+If left is true → stop
+If left is false → evaluate right
+
+👉 Left is 0 → false → evaluate right side
+
+
+Step 3: Evaluate ++b
+b = 6
+Value = 1 (true)
+
+
+Step 4: Final result
+0 || 1 = 1
+
+a = 1
+b = 6
+c = 1
+
+
+
+
+A4. x = 0, y = 5, z = 1
+Rule: Short-circuiting of Logical OR (||).
+Step-by-step: 'x--' uses the original value (1) for the condition, then decrements 'x' to 0. Because the left side of || is 1 (True), the right side (--y) is SKIPPED completely. 'y' remains 5. The overall result is 1, so 'z' becomes 1.
+
+A5. m = 50
+Rule: Compound assignment operators have very low precedence.
+Step-by-step: m *= 2 + 3 translates to m = m * (2 + 3), NOT m = (m * 2) + 3. 
+m = 10 * 5 = 50.
+
+A6. Prints: Hello5. out = 1
+Rule: printf returns the number of characters successfully printed.
+Step-by-step: The inner printf runs first, printing "Hello" (5 characters) and returns 5. The outer printf receives 5, becoming printf("%d", 5). It prints "5" (1 character) and returns 1. 'out' becomes 1.
+
+A7. count = 1
+Rule: scanf returns the number of items successfully read and assigned.
+Step-by-step: scanf successfully reads '15' into 'a'. It then encounters "xyz" while looking for an integer (%d). It fails, leaves "xyz" in the input buffer, and stops. Only 1 variable was successfully assigned.
+
+A8. p = -1, q = 1
+Rule: In C99 and later, the sign of the remainder always matches the dividend (the first number).
+Step-by-step: -10 % 3 takes the sign of -10. 10 % -3 takes the sign of 10.
+
+A9. f1 = 2.0, f2 = 2.0, f3 = 2.5
+Rule: Integer division vs Explicit casting.
+Step-by-step: 
+f1: 5/2 is integer division (=2), assigned to float (=2.0).
+f2: (5/2) happens inside parentheses first (=2), then cast to float (=2.0).
+f3: (float)5 converts 5 to 5.0. 5.0 / 2 forces float division (=2.5).
+
+A10. res = 1
+Rule: Logical NOT (!) has higher precedence than Equality (==).
+Step-by-step: !a translates to !5, which is 0. The expression becomes 0 == 0, which evaluates to 1 (True).
+
+| Level | Operators                                            | Description                         | Associativity |              |              |
+| ----- | ---------------------------------------------------- | ----------------------------------- | ------------- | ------------ | ------------ |
+| 1     | `()` `[]` `->` `.`                                   | Function call, array, struct access | Left → Right  |              |              |
+| 2     | `!` `~` `++` `--` `+` `-` `*` `&` `sizeof` (unary)   | Unary operators                     | Right → Left  |              |              |
+| 3     | `*` `/` `%`                                          | Multiplication, division, modulus   | Left → Right  |              |              |
+| 4     | `+` `-`                                              | Addition, subtraction               | Left → Right  |              |              |
+| 5     | `<<` `>>`                                            | Bitwise shift                       | Left → Right  |              |              |
+| 6     | `<` `<=` `>` `>=`                                    | Relational                          | Left → Right  |              |              |
+| 7     | `==` `!=`                                            | Equality                            | Left → Right  |              |              |
+| 8     | `&`                                                  | Bitwise AND                         | Left → Right  |              |              |
+| 9     | `^`                                                  | Bitwise XOR                         | Left → Right  |              |              |
+| 10    | `                                                    | `                                   | Bitwise OR    | Left → Right |              |
+| 11    | `&&`                                                 | Logical AND                         | Left → Right  |              |              |
+| 12    | `                                                    |                                     | `             | Logical OR   | Left → Right |
+| 13    | `?:`                                                 | Conditional (ternary)               | Right → Left  |              |              |
+| 14    | `=` `+=` `-=` `*=` `/=` `%=` `<<=` `>>=` `&=` `^=` ` | =`                                  | Assignment    | Right → Left |              |
+| 15    | `,`                                                  | Comma operator                      | Left → Right  |              |              |
+
+
+🔥 Most Important Ones (for exams)
+
+These cause maximum confusion 👇
+
+!  >  ==
+* / %   >   + -
+< >   >   == !=
+&&   >   ||
+Assignment = is very low precedence
+
+
+A11. f = 10.0
+Rule: The ternary operator promotes its return values to a common type.
+Step-by-step: Because one option is an int (10) and the other is a double/float (10.5), the compiler automatically promotes the integer 10 to 10.0 before assigning it, ensuring consistent return types.
+
+A12. a = 6, b = 10, c = 5
+Rule: Post-increment returns the original value before incrementing.
+Step-by-step: (a == 5) is True. The expression executes 'a++'. 'c' gets the CURRENT value of 'a' (5). Then 'a' increments to 6. 'b++' is completely ignored.
+
+A13. max = 30
+Rule: Ternary operators associate right-to-left.
+Step-by-step: x > y (10 > 20) is False. The ternary skips 'x' and evaluates the false-branch: (y > z ? y : z). y > z (20 > 30) is False. It selects 'z'. max = 30.
+
+A14. a = 10, res = 1
+Rule: Assignment (=) has lower precedence than Logical OR (||), BUT parentheses force evaluation. Short-circuiting still applies.
+Step-by-step: (a = 0) evaluates to 0 (False). Because it's ||, it must check the right side. (a = 10) evaluates to 10 (True). res becomes 1 (True). 'a' ends up as 10.
+
+A15. res = 14
+Rule: * and / have higher precedence than + and -, and associate left-to-right.
+Step-by-step: 5 * 2 = 10. Then 10 / 2 = 5. The expression becomes 10 + 5 - 1. Left to right: 15 - 1 = 14.
+
+A16. Prints: 30
+Rule: The comma operator returns the rightmost value.
+Step-by-step: The parentheses force (10, 20, 30) to evaluate as a single argument. It evaluates left to right and returns 30. printf("%d", 30) runs.
+
+A17. res = 0 (False)
+Rule: When comparing signed and unsigned integers of the same size, the signed integer is implicitly converted to unsigned.
+Step-by-step: -1 is converted to unsigned int, which becomes the maximum possible integer value (e.g., 4294967295). 4294967295 < 1 is False (0).
+
+A18. UNDEFINED BEHAVIOR
+Rule: Modifying a variable more than once between sequence points (in a single statement) results in undefined behavior.
+Step-by-step: You cannot predict what 'j' will be. Different compilers will give different results. Never write code like this.
+
+A19. a = 7, x = 11, y = 11
+Rule: Pre vs Post increment execution sequence.
+Step-by-step: 
+Line 2: ++a makes 'a' 6. x = 6 + 5 = 11.
+Line 3: a++ uses the current value (6). y = 6 + 5 = 11. After this line, 'a' becomes 7.
+
+A20. Prints: [00042] [42   ]
+Rule: Formatted I/O padding.
+Step-by-step: %05d pads the number to 5 width with leading zeros. %-5d left-justifies the number within a 5-character wide space (padding with spaces on the right).
+
+E.g : %15d  --> [          42] (total 15 chars with rest leading spaces default)
+      %015  --> [000..0042]  (total 15 chars with rest leading zeros)
