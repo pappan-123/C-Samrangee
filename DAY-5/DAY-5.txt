@@ -1,0 +1,121 @@
+DAY-5: NUMBER SYSTEM MCQ
+
+1. Which of the following is a characteristic of a non-positional number system?
+A) The value of a digit is determined by its place.
+B) It uses a base (radix) to calculate magnitude.
+C) The symbols represent the same value regardless of where they appear.
+D) It is more efficient for representing very large numbers than positional systems.
+
+2. What is the decimal equivalent of the hexadecimal number (10)₁₆?
+A) 1
+B) 10
+C) 16
+D) 2
+
+3. In a 4-bit binary system, what is the 2's complement of the value 0000?
+A) 1111
+B) 1000
+C) 0001
+D) 0000
+
+4. A nibble can represent how many unique values?
+A) 4
+B) 8
+C) 15
+D) 16
+
+5. Convert the decimal number 83 to octal.
+A) 123
+B) 103
+C) 132
+D) 75
+
+6. Which of the following binary numbers is equivalent to the octal number 57?
+A) 111101
+B) 101111
+C) 101011
+D) 110111
+
+7. If the MSB of an 8-bit signed binary number (2's complement) is 1, the number is:
+A) Positive
+B) Negative
+C) Zero
+D) Undefined
+
+8. What is the result of the binary subtraction 0011 - 0111 using 2's complement?
+A) 1100
+B) 0100
+C) 1011
+D) 1101
+
+9. Convert (A3)₁₆ to decimal.
+A) 160
+B) 163
+C) 173
+D) 153
+
+10. What is the bitwise 1's complement of the binary string 11001010?
+A) 00110101
+B) 00110110
+C) 11001011
+D) 00110111
+
+11. Convert the fractional binary number 0.011 to decimal.
+A) 0.375
+B) 0.25
+C) 0.125
+D) 0.5
+
+12. To convert a binary number to hexadecimal, we group bits into sets of:
+A) 2
+B) 3
+C) 4
+D) 8
+
+13. What is the result of adding 1110.11 and 1100.011?
+A) 11011.111
+B) 11110.001
+C) 11011.001
+D) 10111.001
+
+14. In 2's complement representation, the binary number 1101 represents which decimal value?
+A) 13
+B) -3
+C) -2
+D) -1
+
+15. Which of the following is NOT a valid hexadecimal number?
+A) BEEF
+B) 1010
+C) G124
+D) 9A
+
+16. What is the 2's complement of 1010?
+A) 0101
+B) 0110
+C) 1110
+D) 1011
+
+17. If you add 1 to the LSB of a 1's complement number 1010, what do you get?
+A) The original number
+B) The 2's complement
+C) The absolute value
+D) 0000
+
+18. What is the value of the digit 'F' in hexadecimal?
+A) 16
+B) 14
+C) 15
+D) 10
+
+19. A system uses 3 bits. How many unique numbers can it represent?
+A) 3
+B) 6
+C) 7
+D) 8
+
+20. Which conversion requires grouping bits from right to left?
+A) Decimal to Binary
+B) Binary to Octal
+C) Octal to Binary
+D) Hexadecimal to Binary
