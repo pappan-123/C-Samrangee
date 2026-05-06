@@ -1,0 +1,166 @@
+==============================================================
+ANSWER KEY FOR PART A (MCQ)
+==============================================================
+1. C (O(1) because 10,000 is a constant number, independent of input 'n')
+2. B (O(1) space because only two scalar variables are created, regardless of 'n')
+3. C (In an if-else chain, only the FIRST true condition executes, the rest are skipped)
+4. B (Trap: x = 0 is an assignment. It evaluates to 0, which is False in C)
+5. A (Trap: The semicolon ends the if-statement. The {} block is independent and always runs)
+6. C (Big Theta defines the exact/tight bound)
+7. B (Trap: Dangling else always binds to the closest preceding 'if' unless braces are used)
+8. D (Trap: i = 5 assigns 5 to i. 5 is True. It prints 5, becomes 6, then loop condition sets it back to 5. Infinite 5s.)
+9. C (A do-while loop ends with 'while(condition);')
+10. D (Trap: The semicolon ends the loop. It runs silently, 'i' becomes 4, terminates, and then prints 4)
+11. B (Floating point numbers cannot be represented with perfect precision in binary)
+12. C (n * n operations = O(n^2))
+13. B (Big Omega (Ω) describes the best-case lower bound. Ω(1) means at least 1 step)
+14. B (Prints 1, at count=2 it skips the printf, at count=3 it prints 3)
+15. A (Wait, Trap check! The increment 'i++' in a for loop happens AFTER 'continue' automatically. So it prints 1, skips 2, prints 3. Output: 1 3. Correct answer: B)
+16. A ('continue' skips the rest of the block. In a while loop, if the increment is at the bottom, it gets skipped forever)
+17. B (x=0/y=3 prints *, x=1/y=2 prints *, x=2/y=1 condition fails. Prints **)
+18. B (Uninitialized variables hold garbage memory values)
+19. D (All of these conditions will run forever)
+20. C (Switch statements check a single variable against multiple exact matches, like chained if-else equality checks)
+
+
+
+--------------------------------------------------------------
+PART B: TRAP CODING CHALLENGES (BRANCHING & LOOPING)
+Instructions: Identify the logical traps in these programs and rewrite them correctly.
+--------------------------------------------------------------
+
+PRACTICE 1: The Broken Even Printer (While Loop & Continue Trap)
+// The goal is to print even numbers from 2 to 10 using a while loop.
+// However, the student's code causes an INFINITE LOOP. 
+// Fix the logic without changing it to a 'for' loop.
+int i = 1;
+while (i <= 10) {
+    if (i % 2 != 0) {
+        continue; 
+    }
+    printf("%d ", i);
+    i++;
+}
+
+===============================================================================
+When i is odd, continue skips i++, so i never increments → infinite loop.
+
+int i = 1;
+
+1.while (i <= 10) {
+    if (i % 2 != 0) {
+        i++;            // 🔥 increment BEFORE continue
+        continue;
+    }
+    printf("%d ", i);
+    i++;
+}
+
+2.int i = 2;
+
+while (i <= 10) {
+    printf("%d ", i);
+    i += 2;
+}
+=================================================================================
+
+
+PRACTICE 2: The Assignment & Dangling Nightmare (Branching)
+// The goal is:
+// If 'a' is 10 and 'b' is 20, print "Jackpot".
+// If 'a' is 10 but 'b' is NOT 20, print "Halfway".
+// If 'a' is NOT 10, print "Loser".
+// The code below has multiple traps (= vs ==) and a dangling else. Fix it using proper braces.
+int a = 10, b = 5;
+if (a = 10)
+    if (b = 20)
+        printf("Jackpot
+");
+else
+    printf("Loser
+");
+
+
+=================================================================================
+
+❌ Problems
+a = 10 → assignment, not comparison
+b = 20 → same issue
+else attaches to nearest if → dangling else bug
+
+1.int a = 10, b = 5;
+
+if (a == 10) {
+    if (b == 20) {
+        printf("Jackpot\n");
+    } else {
+        printf("Halfway\n");
+    }
+} else {
+    printf("Loser\n");
+}
+
+=================================================================================
+
+PRACTICE 3: Space/Time Efficiency (Prime Number Checker)
+// Write a program that checks if a given integer 'N' (e.g., N = 29) is a Prime Number.
+// Constraints: 
+// 1. You must use a loop.
+// 2. Space Complexity MUST be O(1) (Do not use arrays).
+// 3. Time Complexity optimization: Do NOT loop all the way to 'N'. 
+//You only need to loop up to N/2 to verify if it's prime, and you must use a 'break' statement the moment you find a divisor to save time.
+
+=================================================================================
+Key Requirements
+No arrays → O(1) space ✅
+Loop only till N/2 ✅
+Use break when divisor found ✅
+
+#include <stdio.h>
+
+int main() {
+    int N = 29;
+    int isPrime = 1;  // assume prime
+
+    if (N <= 1) {
+        isPrime = 0;
+    } else {
+        for (int i = 2; i <= N / 2; i++) {
+            if (N % i == 0) {
+                isPrime = 0;
+                break;   // 🔥 stop early
+            }
+        }
+    }
+
+    if (isPrime)
+        printf("Prime Number\n");
+    else
+        printf("Not Prime\n");
+
+    return 0;
+}
+=================================================================================
+
+
+PRACTICE 4: Nested Loop Number Pattern (No Arrays)
+// Write a nested loop (a loop inside a loop) to print the following pattern exactly.
+// Do not hardcode the numbers in a single printf. Use the loop variables 'i' and 'j'.
+1
+1 2
+1 2 3
+1 2 3 4
+
+=================================================================================
+#include <stdio.h>
+
+int main() {
+    for (int i = 1; i <= 4; i++) {
+        for (int j = 1; j <= i; j++) {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+=================================================================================
