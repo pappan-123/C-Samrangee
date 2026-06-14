@@ -1,0 +1,119 @@
+Q1. Consider the Boolean function F(A, B, C) = Σm(1, 3, 5, 6, 7). Which of the following represents the minimal Sum-of-Products (SOP) expression for F?
+    A) A'C + AB + BC
+    B) C + AB
+    C) AC' + B'C + AB
+    D) C + AB'
+
+Q2. A logic circuit has three inputs (A, B, C) and outputs a logic 1 if and only if a majority of the inputs are 1. Which logic gate can implement this behavior directly if its inputs are the outputs of two-input AND gates processing all unique pairs of inputs?
+    A) A 3-input NAND gate
+    B) A 3-input NOR gate
+    C) A 3-input OR gate
+    D) A 3-input XOR gate
+
+Q3. According to the postulates and theorems of Boolean algebra, what is the simplified dual form of the expression: A + A'B?
+    A) A . (A' + B)
+    B) A . B
+    C) A . (A + B')
+    D) A' . B
+
+Q4. If the Boolean expression (A + B) . (A + B') . (A' + B) is simplified to its minimal Product-of-Sums (POS) form, what is the result?
+    A) A . B
+    B) A + B
+    C) A' . B'
+    D) A' + B'
+
+Q5. Which of the following universal gate combinations can completely replicate the logical behavior of a 2-input XNOR gate using the absolute minimum number of gates?
+    A) 4 NAND gates
+    B) 5 NAND gates
+    C) 4 NOR gates
+    D) 5 NOR gates
+
+Q6. Apply De Morgan's Laws to completely simplify the complement of the following Boolean expression: F = [ (A . B')' + C ] . (D + E')'
+    A) F' = (A . B') . C' + D + E'
+    B) F' = (A' + B) . C' + D + E'
+    C) F' = (A' + B) + C' . (D' . E)
+    D) F' = (A . B') . C' + D' + E
+
+Q7. What is the output of the following logic circuit config: Two inputs A and B are passed into an XOR gate. The output of this XOR gate is then fed into both inputs of a subsequent NAND gate. The final configuration behaves identically to which single standard logic gate?
+    A) XOR
+    B) XNOR
+    C) AND
+    D) OR
+
+Q8. Let a Boolean function be defined by the truth table where the output is 0 only when the inputs (A, B, C) are (0,0,0), (0,1,0), or (1,1,1). What is the standard Product-of-Sums (canonical POS) expression for this function?
+    A) ΠM(0, 2, 7)
+    B) Σm(1, 3, 4, 5, 6)
+    C) ΠM(1, 3, 4, 5, 6)
+    |D) ΠM(0, 1, 4)
+
+Q9. The Boolean expression A . B + A' . B' . C + A . B' . C simplifies directly to which of the following expressions?
+    A) A . B + C
+    B) A . B + B' . C
+    C) A + B . C
+    D) B + A' . C
+
+Q10. In a digital system, an odd-parity checker circuit yields a 1 when the total number of 1s in the input bits is odd. For a 3-bit input (X, Y, Z), which Boolean expression correctly dictates this logic?
+    A) X . Y . Z + X' . Y' . Z'
+    B) X ⊕ Y ⊕ Z
+    C) X ⊙ Y ⊙ Z
+    D) (X + Y + Z)'
+
+Q11. Given the logic expression F = A . B' + B . C' + C . A'. What is the value of F when the input variables are assigned values such that A = 0, B = 1, and C = 0?
+    A) 0
+    B) 1
+    C) Indeterminate
+    D) 2
+
+Q12. What is the fundamental Boolean postulate or theorem that justifies the algebraic reduction step: X + X . Y = X?
+    A) Distributive Law
+    B) Associative Law
+    C) Absorption Law
+    D) Involution Law
+
+Q13. How many unique minterms are present in the canonical SOP expansion of a 4-variable Boolean function F(W, X, Y, Z) = W'X + YV where V is a typo and should be treated as Z? (Expression: F = W'X + YZ)
+    A) 4
+    B) 6
+    C) 7
+    D) 8
+
+Q14. Consider a logic circuit with two inputs A and B. If we implement the expression F = ((A + B')' . (A' . B)')', what is the equivalent minimal simplified standard gate?
+    A) 0 (Always False)
+    B) 1 (Always True)
+    C) A
+    D) B
+
+Q15. The dual of a Boolean expression is obtained by swapping + and ., and swapping 0 and 1. What is the dual of the Boolean theorem X + X' = 1?
+    A) X . X' = 0
+    B) X' + X = 1
+    C) X . X = X
+    D) X + X = X
+
+Q16. Which of the following truth table definitions correctly characterizes a 2-input XNOR gate with inputs P and Q?
+    A) Output is 1 only when P = 1 and Q = 0
+    B) Output is 1 if P and Q are different
+    C) Output is 1 if P and Q are identical
+    D) Output is 0 if P and Q are both 0
+
+Q17. Simplify the following expression using Boolean properties: (A + B) . (A + C).
+    A) A + B . C
+    B) A . B + C
+    C) A . (B + C)
+    D) A + B + C
+
+Q18. A logic gate has an output of 0 only when all its inputs are at logic state 1. Which gate represents this behavior?
+    A) NOR
+    B) NAND
+    C) AND
+    D) XOR
+
+Q19. Find the complement of the expression F = A'(B'C + BC').
+    A) A + (B + C')(B' + C)
+    B) A' + B'C' + BC
+    C) A + BC + B'C'
+    D) A . (B'C + BC')'
+
+Q20. For a 3-variable Boolean function, how many rows will its complete formal truth table contain to map all possible input combinations?
+    A) 4
+    B) 6
+    C) 8
+    D) 16

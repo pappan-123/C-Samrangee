@@ -1,0 +1,175 @@
+Class 11 Computer Science: Boolean Algebra & Logic Gates
+DAY-7 Solutions and Detailed Explanations
+================================================================================
+
+S1. Correct Answer: B) C + AB
+    Detailed Explanation:
+    The function is given by the minterms: F = Σm(1, 3, 5, 6, 7).
+    Let's write out the minterms explicitly:
+    F = A'B'C + A'BC + AB'C + ABC' + ABC
+    Group terms containing C:
+    A'B'C + A'BC + AB'C + ABC = (A'B' + A'B + AB' + AB)C
+    We know that (A'B' + A'B + AB' + AB) simplifies to 1 because it covers all possible states of A and B.
+    Thus, those four terms combine to simply: C.
+    Now we combine ABC' and ABC: ABC' + ABC = AB(C' + C) = AB.
+    Since ABC is already accounted for in the C group, we can reuse terms (X + X = X theorem).
+    The total minimal expression reduces elegantly to C + AB.
+
+S2. Correct Answer: C) A 3-input OR gate
+    Detailed Explanation:
+    A majority circuit with 3 inputs (A, B, C) outputs 1 when at least two inputs are 1.
+    The unique pairs of inputs are (A and B), (B and C), and (A and C).
+    Passing these into 2-input AND gates yields three intermediate outputs: (A.B), (B.C), and (A.C).
+    The majority function is true if (A.B) is true OR (B.C) is true OR (A.C) is true.
+    Therefore, passing these three intermediate signals into a 3-input OR gate yields the expression: F = A.B + B.C + A.C, which is the exact definition of the majority function.
+
+S3. Correct Answer: A) A . (A' + B)
+    Detailed Explanation:
+    To find the dual of a Boolean expression, we replace all OR operators (+) with AND operators (.) and vice versa, while keeping the variable complements exactly as they are.
+    The original expression is: A + (A' . B)
+    Applying the principle of duality:
+    The main '+' becomes '.'
+    The internal '.' between A' and B becomes '+'
+    This gives: A . (A' + B).
+
+S4. Correct Answer: B) A.B
+
+S5. Correct Answer: C) 4 NOR gates
+    Detailed Explanation:
+    A 2-input XOR gate can be implemented using exactly 4 NAND gates or 5 NOR gates.
+    Conversely, an XNOR gate (which is the complement of XOR) requires exactly 5 NAND gates or 4 NOR gates.
+    Therefore, Option C (4 NOR gates) represents the absolute minimum number of gates required to implement an XNOR logic gate.
+
+S6. Correct Answer: A) F' = (A . B') . C' + D + E'
+    Detailed Explanation:
+    We are asked to find the complement of F, which is F'.
+    F = [ (A . B')' + C ] . (D + E')'
+    Taking the complement:
+    F' = { [ (A . B')' + C ] . (D + E')' }'
+    Using De Morgan's First Law ( (X . Y)' = X' + Y' ):
+    F' = [ (A . B')' + C ]' + [ (D + E')' ]'
+    Apply Involution Law ( (Z')' = Z ) to the second part: [ (D + E')' ]' = D + E'.
+    Now apply De Morgan's Law to the first part: [ (A . B')' + C ]' = [ (A . B')' ]' . C'
+    Using Involution Law again: [ (A . B')' ]' = A . B'.
+    Combining both parts gives: F' = (A . B') . C' + D + E'. This matches Option A perfectly.
+
+S7. Correct Answer: B) XNOR
+    Detailed Explanation:
+    Step 1: The first gate is an XOR gate with inputs A and B. Its output is X = A ⊕ B.
+    Step 2: This output X is fed into both inputs of a NAND gate.
+    A NAND gate with tied inputs acts exactly like a NOT gate because NAND(X, X) = (X . X)' = X'.
+    Step 3: Therefore, the final output is the complement of the XOR output: (A ⊕ B)'.
+    The complement of an XOR gate is an XNOR gate.
+
+S8. Correct Answer: A) ΠM(0, 2, 7)
+    Detailed Explanation:
+    In Boolean algebra, the Maxterms (M) represent the rows of a truth table where the output of the function is 0.
+    The problem specifies that the output is 0 for the following input combinations:
+    1. (A, B, C) = (0, 0, 0) -> Binary 0 -> Maxterm M0
+    2. (A, B, C) = (0, 1, 0) -> Binary 2 -> Maxterm M2
+    3. (A, B, C) = (1, 1, 1) -> Binary 7 -> Maxterm M7
+    The formal Product-of-Sums (POS) expression is the product of these maxterms, written as ΠM(0, 2, 7).
+
+S9. Correct Answer: B) A . B + B' . C
+    Detailed Explanation:
+    Given expression: F = A . B + A' . B' . C + A . B' . C
+    Factor out B' . C from the second and third terms:
+    A' . B' . C + A . B' . C = (A' + A) . B' . C
+    Since A' + A = 1, this simplifies to: 1 . B' . C = B' . C
+    Now substitute this back into the expression:
+    F = A . B + B' . C. This matches option B.
+
+S10. Correct Answer: B) X ⊕ Y ⊕ Z
+    Detailed Explanation:
+    An Exclusive-OR (XOR) gate with multiple inputs acts naturally as an odd detector (or parity checker).
+    - If zero inputs are 1 (0,0,0): 0 ⊕ 0 ⊕ 0 = 0 (even number of 1s)
+    - If one input is 1 (1,0,0): 1 ⊕ 0 ⊕ 0 = 1 (odd number of 1s)
+    - If two inputs are 1 (1,1,0): 1 ⊕ 1 ⊕ 0 = 0 ⊕ 0 = 0 (even number of 1s)
+    - If three inputs are 1 (1,1,1): 1 ⊕ 1 ⊕ 1 = 0 ⊕ 1 = 1 (odd number of 1s)
+    Thus, X ⊕ Y ⊕ Z perfectly satisfies the condition for an odd-parity checker.
+
+S11. Correct Answer: B) 1
+    Detailed Explanation:
+    Given values: A = 0, B = 1, C = 0.
+    Let's evaluate each term of F = A . B' + B . C' + C . A':
+    - Term 1: A . B' = 0 . (1)' = 0 . 0 = 0
+    - Term 2: B . C' = 1 . (0)' = 1 . 1 = 1
+    - Term 3: C . A' = 0 . (0)' = 0 . 1 = 0
+    Now compute the total sum: F = 0 + 1 + 0 = 1.
+
+S12. Correct Answer: C) Absorption Law
+    Detailed Explanation:
+    The identity X + X . Y = X is explicitly known as the Absorption Law in Boolean algebra.
+    It can be proven algebraically using the Distributive Law:
+    X + X . Y = X . 1 + X . Y = X . (1 + Y)
+    According to the property of 1 (Dominance law), 1 + Y = 1.
+    Therefore, X . (1) = X.
+
+S13. Correct Answer: C) 7
+    Detailed Explanation:
+    The expression is F(W, X, Y, Z) = W'X + YZ for a 4-variable domain.
+    To find the number of unique minterms, we expand each term to include all missing variables:
+    - Term 1: W'X is missing Y and Z.
+      W'X = W'X(Y + Y')(Z + Z') = W'XY'Z' + W'XY'Z + W'XYZ' + W'XYZ (4 minterms)
+    - Term 2: YZ is missing W and X.
+      YZ = (W + W')(X + X')YZ = WXYZ + WX'YZ + W'XYZ + W'X'YZ (4 minterms)
+    Now, find the union of these two sets of minterms. Notice that the minterm W'XYZ appears in both sets.
+    Total unique minterms = 4 + 4 - 1 (overlap) = 7 unique minterms.
+
+S14. Correct Answer: B) 1 (Always True)
+    Detailed Explanation:
+    Let's simplify F = ((A + B')' . (A' . B)')' using De Morgan's Law:
+    F = [ (A + B')' ]' + [ (A' . B)' ]'
+    Applying the Involution Law:
+    F = (A + B') + (A' . B) = A + B' + (A' . B)
+    We can distribute B' over (A' . B): B' + (A' . B) = (B' + A') . (B' + B)
+    Since B' + B = 1, this simplifies to (B' + A') . 1 = B' + A'.
+    Now substitute this back:
+    F = A + B' + A' = (A + A') + B'
+    Since A + A' = 1, we get: F = 1 + B' = 1.
+    The circuit output is always 1 (Tautology).
+
+S15. Correct Answer: A) X . X' = 0
+    Detailed Explanation:
+    The duality principle states that any true Boolean statement remains true if we:
+    1. Change every OR (+) operator to an AND (.) operator.
+    2. Change every AND (.) operator to an OR (+) operator.
+    3. Replace every 0 with 1 and every 1 with 0.
+    Starting theorem: X + X' = 1
+    Changing '+' to '.' and '1' to '0' gives: X . X' = 0.
+
+S16. Correct Answer: C) Output is 1 if P and Q are identical
+    Detailed Explanation:
+    The XNOR gate stands for "Exclusive NOR". It is the logical equivalence gate.
+    Its truth table states that the output is 1 if both inputs match (i.e., both are 0 or both are 1).
+    If the inputs are different, the output is 0.
+
+S17. Correct Answer: A) A + B . C
+    Detailed Explanation:
+    According to the second distributive law of Boolean algebra, addition distributes over multiplication:
+    A + (B . C) = (A + B) . (A + C)
+    Therefore, looking at the expression in reverse, (A + B) . (A + C) simplifies directly back to A + B . C.
+
+S18. Correct Answer: B) NAND
+    Detailed Explanation:
+    Let's look at the behavior description: Output is 0 ONLY when all inputs are 1. For all other combinations, the output is 1.
+    This is the inverted behavior of an AND gate (which outputs 1 only when all inputs are 1).
+    Therefore, this logic represents a NAND (Not-AND) gate.
+
+S19. Correct Answer: A) A + (B + C')(B' + C)
+    Detailed Explanation:
+    We want to find F' where F = A'(B'C + BC').
+    Apply De Morgan's Law:
+    F' = [ A' . (B'C + BC') ]'
+    F' = (A')' + (B'C + BC')' = A + (B'C + BC')'
+    Now apply De Morgan's Law inside the second bracket:
+    (B'C + BC')' = (B'C)' . (BC')'
+    Apply De Morgan's Law to each sub-bracket:
+    (B'C)' = B + C'
+    (BC')' = B' + C
+    Thus, the expression becomes: F' = A + (B + C')(B' + C). This matches Option A.
+
+S20. Correct Answer: C) 8
+    Detailed Explanation:
+    The number of unique input rows or combinations in a truth table is determined by the formula 2^n, where 'n' represents the number of independent binary input variables.
+    For a 3-variable system (such as A, B, C), the number of rows is 2^3 = 8 rows.

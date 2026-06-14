@@ -1,0 +1,280 @@
+Q1. Consider the following code snippet executed on a standard 64-bit architecture:
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *ptr = arr;
+    printf("%d\n", *(ptr++));
+    printf("%d\n", *ptr);
+    
+    What will be the output?
+    A) 10 followed by 10
+    B) 10 followed by 20
+    C) 20 followed by 20
+    D) Compile-time error due to invalid pointer increment
+
+Q2. What will be the output of the following C program?
+    #include <stdio.h>
+    int main() {
+        int arr[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+        printf("%d ", *(*(arr + 1) + 2));
+        printf("%d", *(*arr + 5));
+        return 0;
+    }
+    A) 6 6
+    B) 6 5
+    C) 5 6
+    D) Undefined behavior because *(*arr + 5) goes out of row boundaries
+
+Q3. Review the code below carefully:
+    #include <stdio.h>
+    #include <string.h>
+    int main() {
+        char str1[5] = "Host";
+        char str2[] = "Port";
+        strcat(str1, str2);
+        printf("%s", str1);
+        return 0;
+    }
+    What is the most accurate outcome of this program?
+    A) HostPort
+    B) HostP
+    C) Compilation error
+    D) Buffer overflow / Runtime crash due to memory corruption
+
+Q4. Analyze the following pointer declarations:
+    #include <stdio.h>
+    int main() {
+        int a = 10, b = 20;
+        const int *ptr1 = &a;
+        int *const ptr2 = &b;
+        
+        ptr1 = &b;      // Line 1
+        *ptr1 = 30;     // Line 2
+        ptr2 = &a;      // Line 3
+        *ptr2 = 40;     // Line 4
+        return 0;
+    }
+    Which lines will cause compilation errors?
+    A) Line 1 and Line 3
+    B) Line 2 and Line 4
+    C) Line 2 and Line 3
+    D) Line 1 and Line 4
+
+Q5. What will be the output of the following code?
+    #include <stdio.h>
+    int main() {
+        char str[] = "C-Language\0Quiz";
+        printf("%lu %lu", sizeof(str), strlen(str));
+        return 0;
+    }
+    A) 16 10
+    B) 16 15
+    C) 11 10
+    D) 15 10
+
+Q6. A student attempts to write a program to take a user's full name:
+    #include <stdio.h>
+    #include <string.h>
+    int main() {
+        char name[10];
+        printf("Enter name: ");
+        scanf("%s", name);
+        printf("[%s]", name);
+        return 0;
+    }
+    If the user types "Dennis Ritchie" (without quotes), what will be printed?
+    A) [Dennis Ritchie]
+    B) [Dennis]
+    C) [Dennis R]
+    D) Runtime crash instantly during input due to size violation
+
+Q7. What is the output of the following program?
+    #include <stdio.h>
+    int main() {
+        int arr[] = {12, 14, 16, 18, 20};
+        int *p1 = &arr[1];
+        int *p2 = &arr[4];
+        printf("%ld", p2 - p1);
+        return 0;
+    }
+    A) 3
+    B) 12
+    C) 6
+    D) Execution-dependent based on system memory mapping
+
+Q8. What will be printed by this code?
+    #include <stdio.h>
+    int main() {
+        int matrix[2][3] = {1, 2, 3, 4, 5, 6};
+        int (*ptr)[3] = matrix;
+        ptr++;
+        printf("%d %d", (*ptr)[0], (*ptr)[1]);
+        return 0;
+    }
+    A) 2 3
+    B) 4 5
+    C) 1 4
+    D) Compilation error due to pointer type mismatch
+
+Q9. What happens when the following code is compiled and executed?
+    #include <stdio.h>
+    #include <string.h>
+    int main() {
+        char s1[] = "Hello";
+        char s2[] = "Hello";
+        if (s1 == s2) {
+            printf("Equal\n");
+        } else {
+            printf("Not Equal\n");
+        }
+        return 0;
+    }
+    A) Equal
+    B) Not Equal
+    C) Compilation error
+    D) Output is unpredictable
+
+Q10. Consider the following code block:
+     #include <stdio.h>
+     int main() {
+         int a = 5;
+         int *p = &a;
+         int **q = &p;
+         printf("%d", **q + 3);
+         return 0;
+     }
+     What is the output?
+     A) Address of a shifted by 3 elements
+     B) Address of p shifted by 3 elements
+     C) 8
+     D) Compilation Error
+
+Q11. What will be the output of this program?
+     #include <stdio.h>
+     int main() {
+         int arr[5] = {1, 2, 3, 4, 5};
+         printf("%d", 3[arr]);
+         return 0;
+     }
+     A) 3
+     B) 4
+     C) Compilation error: Invalid index syntax
+     D) Garbage value
+
+Q12. What is the result of the following string operation?
+     #include <stdio.h>
+     #include <string.h>
+     int main() {
+         char str1[] = "Database";
+         char str2[] = "Data";
+         printf("%d", strcmp(str1, str2));
+         return 0;
+     }
+     A) 0
+     B) A positive value
+     C) A negative value
+     D) 4
+
+Q13. Observe the following unsafe pointer condition:
+     #include <stdio.h>
+     int main() {
+         int *ptr;
+         if(ptr == NULL)
+             printf("Null Pointer\n");
+         else
+             printf("Wild Pointer\n");
+         return 0;
+     }
+     What will be the outcome on a standard C compiler?
+     A) Always prints "Null Pointer"
+     B) Always prints "Wild Pointer"
+     C) It depends on what garbage value happens to be in memory at runtime
+     D) Compilation fails because 'ptr' is not assigned
+
+Q14. What will be the output of the following program?
+     #include <stdio.h>
+     int main() {
+         char arr[] = "Structures";
+         char *ptr = arr;
+         printf("%c", *(ptr + ptr[0] - ptr[4]));
+         return 0;
+     }
+     A) S
+     B) t
+     C) r
+     D) u
+
+Q15. Consider the following statement about multi-dimensional arrays:
+     "In C, a two-dimensional array int matrix[4][5] is stored sequentially in memory."
+     Which element immediately succeeds matrix[1][4] in physical memory layout?
+     A) matrix[1][5]
+     B) matrix[2][0]
+     C) matrix[2][4]
+     D) None, it causes a memory segmentation boundary shift
+
+Q16. What is the output of the following program?
+     #include <stdio.h>
+     int main() {
+         int arr[5] = {10, 20, 30, 40, 50};
+         int *ptr = &arr[2];
+         printf("%d", ptr[-1]);
+         return 0;
+     }
+     A) Compilation error: Negative indexing is invalid
+     B) 20
+     C) 10
+     D) Garbage value or Segmentation Fault
+
+Q17. Study this code carefully:
+     #include <stdio.h>
+     #include <string.h>
+     int main() {
+         char text[100] = "Line\nFeed";
+         text[strcspn(text, "\n")] = '\0';
+         printf("%s", text);
+         return 0;
+     }
+     What is the precise output?
+     A) Line Feed
+     B) Line
+     C) Feed
+     D) Line\nFeed
+
+Q18. What will be the output of the following C code?
+     #include <stdio.h>
+     int main() {
+         int x = 100;
+         int *p = &x;
+         void *vptr = p;
+         printf("%d", *vptr);
+         return 0;
+     }
+     A) 100
+     B) Address of x
+     C) Compilation Error: Dereferencing a void pointer
+     D) Runtime crash due to type loss
+
+Q19. What will be printed by the code below?
+     #include <stdio.h>
+     int main() {
+         int arr[3] = {5, 10, 15};
+         printf("%lu ", sizeof(arr));
+         printf("%lu", sizeof(&arr));
+         return 0;
+     }
+     (Assume a 64-bit system where integers are 4 bytes and pointers are 8 bytes)
+     A) 12 12
+     B) 12 8
+     C) 24 8
+     D) 8 8
+
+Q20. What will be the final state or output of the code below?
+     #include <stdio.h>
+     int main() {
+         char buffer[6] = "Hello";
+         buffer[5] = '!';
+         printf("%s", buffer);
+         return 0;
+     }
+     A) Hello!
+     B) Hello
+     C) Compilation error
+     D) Undefined behavior (prints Hello! followed by random garbage until a zero byte is encountered)

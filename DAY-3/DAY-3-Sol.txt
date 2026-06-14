@@ -1,0 +1,81 @@
+1. ✅ C
+An instruction = one command; a program = a sequence of instructions forming logic.
+2. ✅ D
+Mnemonics like MOV, ADD → clearly Assembly Language.
+3. ✅ C
+Using GOTO breaks structured flow → violates structured programming.
+4. ✅ B
+Encapsulation hides internal data and prevents direct modification.
+5. ✅ C
+SQL focuses on what to get, not how to get it → non-procedural.
+6. ✅ B
+“Add 5 or 6” is ambiguous → violates Definiteness (clear steps required).
+7. ✅ A
+Runs forever → violates Finiteness (must terminate).
+8. ✅ C
+A Base Case stops recursion → prevents infinite calls/crash.
+9. ✅ B
+Decision (diamond) must have two outputs → Yes/No or True/False.
+10. ✅ C
+Parallelogram = Input/Output → “Print Sum”. 
+11. ✅ B
+High-level languages hide hardware complexity → abstraction.
+12. ✅ C
+Pseudocode uses plain English + logic, not strict syntax.
+13. ✅ B
+Class = blueprint (Car), Object = real instance (John’s car).
+14. ✅ A
+Procedural → functions/logic
+OOP → objects/data
+15. ✅ C
+Assembly → Machine code via Assembler.
+16. ✅ B
+Basic structures: Sequence, Selection, Iteration → Recursion is not one.
+17. ✅ B
+Effectiveness = steps must be simple and executable manually.
+18. ✅ D
+Upward flow → repetition → loop/iteration.
+19. ✅ C
+Recursion = solving smaller versions of the same problem.
+20. ✅ A
+Machine code = binary (hardware-level)
+High-level = human-readable.
+
+
+
+Pseudo Code:
+
+1.
+START
+DECLARE f, n
+INPUT n
+IF n < 0 THEN
+PRINT "Error: Factorial is not defined for negative numbers"
+EXIT
+ENDIF
+SET f = 1
+FOR i = 1 TO n
+f = f * i
+PRINT f
+END
+
+2.
+START
+DECLARE number
+DISPLAY "Enter a number:"
+INPUT number
+IF number % 2 == 0 THEN
+PRINT "The number is even"
+ELSE
+PRINT "The number is odd"
+END IF
+END
+
+
+3.
+IF marks >= 40
+PRINT "Passed"
+ELSE
+PRINT "Failed"
+ENDIF
+

@@ -1,0 +1,691 @@
+--------------------------------------------------
+ANSWER KEY:
+1. B
+2. B
+3. B
+4. C
+5. B
+6. A
+7. C
+8. B
+9. C
+10. A
+11. B
+12. B
+13. B
+14. C
+15. D
+16. C
+17. B
+18. B
+19. B
+20. A
+
+=============================================================================================
+
+# COMPUTER CODES & ENCODING SCHEMES – MCQs with Proper Explanation & Examples
+
+---
+
+## 1. Which of the following is a non-weighted, self-complementing code?
+
+**Answer:** **B) Excess-3**
+
+### Explanation:
+
+* **Excess-3** is a **non-weighted code** because bit positions do not have fixed weights.
+* It is also **self-complementing**, meaning:
+
+  * Taking the 1’s complement gives the 9’s complement of the decimal number.
+
+### Example:
+
+Decimal **2** in Excess-3:
+
+* 2 + 3 = 5
+* 5 in binary = **0101**
+
+1’s complement of 0101:
+
+* 1010
+
+1010 in Excess-3:
+
+* Binary 1010 = Decimal 10
+* 10 − 3 = 7
+
+7 is the **9’s complement of 2**.
+
+---
+
+## 2. The decimal number 14 is represented in BCD (8421) as:
+
+**Answer:** **B) 0001 0100**
+
+### Explanation:
+
+BCD stores each decimal digit separately in 4 bits.
+
+* Decimal 1 → 0001
+* Decimal 4 → 0100
+
+So:
+14 = **0001 0100**
+
+### Example:
+
+Decimal 27 in BCD:
+
+* 2 → 0010
+* 7 → 0111
+
+Result:
+**0010 0111**
+
+---
+
+## 3. How many invalid bit patterns exist in the 4-bit Binary Coded Decimal (8421) scheme?
+
+**Answer:** **B) 6**
+
+### Explanation:
+
+4 bits can represent:
+2^4 = 16
+
+But BCD only uses decimal digits:
+0 to 9 → 10 combinations.
+
+Invalid combinations:
+16 − 10 = **6**
+
+### Invalid BCD codes:
+
+1010, 1011, 1100, 1101, 1110, 1111
+
+---
+
+## 4. Which code is specifically designed to minimize errors in mechanical systems where multiple bits might change at once?
+
+**Answer:** **C) Gray Code**
+
+### Explanation:
+
+In Gray code, only **one bit changes at a time**.
+
+This reduces errors in:
+
+* Shaft encoders
+* Mechanical switches
+* Position sensors
+
+### Example:
+
+Binary counting:
+
+* 0111 → 1000
+  (4 bits change)
+
+Gray counting:
+
+* 0100 → 1100
+  (Only 1 bit changes)
+
+---
+
+## 5. What is the 84-2-1 representation of the decimal digit 5?
+
+**Answer:** **B) 1011**
+
+### Explanation:
+
+Weights are:
+8, 4, −2, −1
+
+For 1011:
+1(8)+0(4)+1(-2)+1(-1)=8-2-1=5
+
+So decimal 5 = **1011**
+
+---
+
+## 6. In Gray to Binary conversion, the second bit of the binary sequence is found by:
+
+**Answer:** **A) XORing the first binary bit with the second gray bit**
+
+### Rule:
+
+* First Binary bit = First Gray bit
+* Next Binary bit:
+  B_n = B_{n-1} \oplus G_n
+
+### Example:
+
+Gray = 1011
+
+* B1 = 1
+* B2 = 1 XOR 0 = 1
+* B3 = 1 XOR 1 = 0
+* B4 = 0 XOR 1 = 1
+
+Binary = **1101**
+
+---
+
+## 7. To convert a BCD digit to Excess-3, we add:
+
+**Answer:** **C) 0011**
+
+### Explanation:
+
+Excess-3 means adding decimal 3.
+
+### Example:
+
+BCD of 4:
+
+* 0100
+
+Add 0011:
+0100 + 0011 = 0111
+
+So Excess-3 of 4 = **0111**
+
+---
+
+## 8. When adding two Excess-3 numbers, if no carry is generated from the addition of two nibbles, what is the correction factor?
+
+**Answer:** **B) Subtract 0011**
+
+### Explanation:
+
+In Excess-3 arithmetic:
+
+* Carry generated → add 0011
+* No carry → subtract 0011
+
+### Example:
+
+Suppose result without carry:
+1001
+
+Correction:
+1001 - 0011 = 0110
+
+---
+
+## 9. Which encoding scheme was specifically developed to support Indian scripts while maintaining ASCII compatibility?
+
+**Answer:** **C) ISCII**
+
+### Explanation:
+
+ISCII was created for Indian languages like:
+
+* Bengali
+* Hindi
+* Tamil
+* Telugu
+
+### Example:
+
+It supports Devanagari characters along with ASCII English characters.
+
+---
+
+## 10. Standard 7-bit ASCII can represent a total of how many unique characters?
+
+**Answer:** **A) 128**
+
+### Explanation:
+
+7 bits represent:
+2^7 = 128
+
+### Example:
+
+* A = 65
+* a = 97
+* Space = 32
+
+---
+
+## 11. If the binary number is 1100, its equivalent Gray code is:
+
+**Answer:** **B) 1010**
+
+### Rule:
+
+* First Gray bit = First Binary bit
+* Remaining bits:
+  XOR adjacent binary bits
+
+### Example:
+
+Binary = 1100
+
+* G1 = 1
+* G2 = 1 XOR 1 = 0
+* G3 = 1 XOR 0 = 1
+* G4 = 0 XOR 0 = 0
+
+Gray = **1010**
+
+---
+
+## 12. Which statement is TRUE regarding Unicode?
+
+**Answer:** **B) It can represent over 1.1 million characters.**
+
+### Explanation:
+
+Unicode supports almost all world languages.
+
+### Example:
+
+Unicode supports:
+
+* English → A
+* Bengali → অ
+* Hindi → क
+* Emoji → 😊
+
+---
+
+## 13. The 1's complement of a self-complementing code's binary pattern corresponds to:
+
+**Answer:** **B) The 9's complement of the decimal digit**
+
+### Example:
+
+Decimal 4 in Excess-3:
+
+* 4 + 3 = 7
+* Binary = 0111
+
+1’s complement:
+
+* 1000
+
+1000 in Excess-3:
+
+* 8 − 3 = 5
+
+5 is the 9’s complement of 4.
+
+---
+
+## 14. What is the primary difference between BCD and Binary?
+
+**Answer:** **C) BCD encodes each decimal digit separately into 4 bits.**
+
+### Example:
+
+Decimal 45
+
+### Binary:
+
+45_{10}=101101_2
+
+### BCD:
+
+* 4 → 0100
+* 5 → 0101
+
+BCD:
+**0100 0101**
+
+---
+
+## 15. Convert Gray code 1011 to Binary:
+
+**Answer:** **B) 1101**
+
+### Conversion:
+
+Gray = 1011
+
+* B1 = 1
+* B2 = 1 XOR 0 = 1
+* B3 = 1 XOR 1 = 0
+* B4 = 0 XOR 1 = 1
+
+Binary = **1101**
+
+---
+
+## 16. Which of the following is NOT a weighted code?
+
+**Answer:** **C) Gray Code**
+
+### Explanation:
+
+Weighted codes assign positional weights.
+
+Examples:
+
+* 8421
+* 2421
+* 84-2-1
+
+Gray code does not use positional weights.
+
+### Example:
+
+Gray sequence:
+000 → 001 → 011 → 010
+
+No weights involved.
+
+---
+
+## 17. In the ASCII table, if 'A' is 65 (01000001), what is the value of 'B'?
+
+**Answer:** **B) 66**
+
+### Explanation:
+
+ASCII values increase sequentially.
+
+* A = 65
+* B = 66
+* C = 67
+
+### Example:
+
+Binary of B:
+66 = **01000010**
+
+---
+
+## 18. What is the Excess-3 representation of decimal 0?
+
+**Answer:** **B) 0011**
+
+### Explanation:
+
+Add 3 to decimal digit.
+
+0 + 3 = 3
+
+Binary of 3:
+0011
+
+---
+
+## 19. Why is Excess-3 often used in decimal arithmetic?
+
+**Answer:** **B) Because its self-complementing property simplifies subtraction.**
+
+### Explanation:
+
+Subtraction becomes easier using complements.
+
+### Example:
+
+9’s complement of decimal 2:
+
+* 9 − 2 = 7
+
+Excess-3 of 2:
+0101
+
+1’s complement:
+1010
+
+1010 represents 7 in Excess-3.
+
+---
+
+## 20. UTF-8 is a variable-length encoding. This means:
+
+**Answer:** **A) Characters can take between 1 and 4 bytes.**
+
+### Explanation:
+
+UTF-8 stores different characters using different byte lengths.
+
+### Example:
+
+* English A → 1 byte
+* € → 3 bytes
+* 😊 → 4 bytes
+
+This saves storage while supporting all languages.
+
+
+=============================================================================================
+
+
+In **Excess-3 (XS-3)** code, each decimal digit is represented by adding **3** to the digit and then converting to binary.
+
+Steps:
+
+1. Convert each decimal digit to XS-3.
+2. Add the binary numbers.
+3. If carry occurs → add `0011` to the lower nibble.
+   If no carry → subtract `0011`.
+4. Convert result back to decimal and BCD.
+
+---
+
+# 1) (8 + 9)
+
+### Step 1: XS-3 codes
+
+* (8 \rightarrow 8+3=11 \rightarrow 1011)
+* (9 \rightarrow 9+3=12 \rightarrow 1100)
+
+### Step 2: Add
+
+```text
+  1011
++ 1100
+-------
+10111
+```
+
+Carry generated.
+
+Lower 4 bits = `0111`
+
+Add `0011` correction:
+
+```text
+0111
+0011
+-----
+1010
+```
+
+Final result:
+
+```text
+0001 1010
+```
+
+### Step 3: Decode
+
+* `0001` → 1
+* `1010` → 7
+
+So decimal sum = **17**
+
+### BCD of 17
+
+```text
+0001 0111
+```
+
+---
+
+# 2) (23 + 33)
+
+## XS-3 Representation
+
+### 23
+
+* (2 \rightarrow 0101)
+* (3 \rightarrow 0110)
+
+So:
+
+```text
+23 = 0101 0110
+```
+
+### 33
+
+* (3 \rightarrow 0110)
+* (3 \rightarrow 0110)
+
+So:
+
+```text
+33 = 0110 0110
+```
+
+---
+
+## Add LSD
+
+```text
+0110
+0110
+-----
+1100
+```
+
+No carry → subtract `0011`
+
+```text
+1100
+0011
+-----
+1001
+```
+
+---
+
+## Add MSD
+
+```text
+0101
+0110
+-----
+1011
+```
+
+No carry → subtract `0011`
+
+```text
+1011
+0011
+-----
+1000
+```
+
+Final XS-3 result:
+
+```text
+1000 1001
+```
+
+### Decode
+
+* `1000` → 5
+* `1001` → 6
+
+Decimal sum = **56**
+
+### BCD of 56
+
+```text
+0101 0110
+```
+
+---
+
+# 3) (3 + 11)
+
+## XS-3 Representation
+
+### 3
+
+```text
+0110
+```
+
+### 11
+
+* (1 \rightarrow 0100)
+* (1 \rightarrow 0100)
+
+```text
+0100 0100
+```
+
+Treat 3 as:
+
+```text
+0000 0110
+```
+
+---
+
+## Add LSD
+
+```text
+0110
+0100
+-----
+1010
+```
+
+No carry → subtract `0011`
+
+```text
+1010
+0011
+-----
+0111
+```
+
+---
+
+## Add MSD
+
+```text
+0000
+0100
+-----
+0100
+```
+
+No carry → subtract `0011`
+
+```text
+0100
+0011
+-----
+0001
+```
+
+Final XS-3 result:
+
+```text
+0001 0111
+```
+
+### Decode
+
+* `0001` → 1
+* `0111` → 4
+
+Decimal sum = **14**
+
+### BCD of 14
+
+```text
+0001 0100
+```

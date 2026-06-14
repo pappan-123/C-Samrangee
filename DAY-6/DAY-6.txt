@@ -1,0 +1,121 @@
+20 MULTIPLE CHOICE QUESTIONS (MCQs): COMPUTER CODES & ENCODING SCHEMES
+
+1. Which of the following is a non-weighted, self-complementing code?
+A) BCD (8421)
+B) Excess-3
+C) Gray Code
+D) ASCII
+
+2. The decimal number 14 is represented in BCD (8421) as:
+A) 1110
+B) 0001 0100
+C) 0001 1110
+D) 10100
+
+3. How many invalid bit patterns exist in the 4-bit Binary Coded Decimal (8421) scheme?
+A) 4
+B) 6
+C) 10
+D) 16
+
+4. Which code is specifically designed to minimize errors in mechanical systems where multiple bits might change at once?
+A) Unicode
+B) Excess-3
+C) Gray Code
+D) 84-2-1
+
+5. What is the 84-2-1 representation of the decimal digit 5?
+A) 0101
+B) 1011
+C) 1101
+D) 0111
+
+6. In Gray to Binary conversion, the second bit of the binary sequence is found by:
+A) XORing the first binary bit with the second gray bit
+B) XORing the first gray bit with the second gray bit
+C) XORing the first gray bit with the second binary bit
+D) Keeping the second gray bit as is
+
+7. To convert a BCD digit to Excess-3, we add:
+A) 0001
+B) 0010
+C) 0011
+D) 0111
+
+8. When adding two Excess-3 numbers, if no carry is generated from the addition of two nibbles, what is the correction factor?
+A) Add 0011
+B) Subtract 0011
+C) Add 0110
+D) No correction needed
+
+9. Which encoding scheme was specifically developed to support Indian scripts while maintaining ASCII compatibility?
+A) Unicode
+B) UTF-8
+C) ISCII
+D) Extended ASCII
+
+10. Standard 7-bit ASCII can represent a total of how many unique characters?
+A) 128
+B) 256
+C) 64
+D) 512
+
+11. If the binary number is 1100, its equivalent Gray code is:
+A) 1100
+B) 1010
+C) 1000
+D) 0110
+
+12. Which statement is TRUE regarding Unicode?
+A) It is a fixed 7-bit encoding scheme.
+B) It can represent over 1.1 million characters.
+C) It is only used for English and Emojis.
+D) It is a weighted code.
+
+13. The 1's complement of a self-complementing code's binary pattern corresponds to:
+A) The 2's complement of the value
+B) The 9's complement of the decimal digit
+C) The Gray code of the value
+D) The ASCII value of the digit
+
+14. What is the primary difference between BCD and Binary?
+A) BCD is faster for calculations.
+B) Binary uses more bits than BCD for large numbers.
+C) BCD encodes each decimal digit separately into 4 bits.
+D) Binary is a non-weighted code.
+
+15. Convert Gray code 1011 to Binary:
+A) 1110
+B) 1101
+C) 1011
+D) 1100
+
+16. Which of the following is NOT a weighted code?
+A) 8421
+B) 2421
+C) Gray Code
+D) 84-2-1
+
+17. In the ASCII table, if 'A' is 65 (01000001), what is the value of 'B'?
+A) 64
+B) 66
+C) 97
+D) 101
+
+18. What is the Excess-3 representation of decimal 0?
+A) 0000
+B) 0011
+C) 1100
+D) 0111
+
+19. Why is Excess-3 often used in decimal arithmetic?
+A) Because it is a unit-distance code.
+B) Because its self-complementing property simplifies subtraction.
+C) Because it uses fewer bits than BCD.
+D) Because it is compatible with Unicode.
+
+20. UTF-8 is a variable-length encoding. This means:
+A) Characters can take between 1 and 4 bytes.
+B) The number of bits is always 8.
+C) It only works with 8-bit processors.
+D) It cannot represent Indian languages.

@@ -1,0 +1,45 @@
+DAY-5: NUMBER SYSTEM MCQ SOLUTIONS
+
+1. C
+2. C
+3. D
+4. D
+5. A
+6. B
+7. B
+8. A
+9. B
+10. A
+11. A
+12. C
+13. C
+14. B
+15. C
+16. B
+17. B
+18. C
+19. D
+20. B
+
+EXPLANATIONS
+
+1. Non-positional systems do not depend on place value.
+2. (10)₁₆ = 1 × 16 + 0 = 16.
+3. 2's complement of 0000 remains 0000.
+4. A nibble contains 4 bits, so it represents 2⁴ = 16 values.
+5. 83₁₀ = 123₈.
+6. 5 = 101 and 7 = 111, so 57₈ = 101111₂.
+7. In signed binary representation, MSB = 1 means negative.
+8. 0011 - 0111 = -4, which is 1100 in 2's complement.
+9. (A3)₁₆ = (10 × 16) + 3 = 163.
+10. 1's complement means flipping all bits.
+11. 0.011₂ = 0/2 + 1/4 + 1/8 = 0.375.
+12. Hexadecimal groups binary digits into sets of 4 bits.
+13. 1110.11 + 1100.011 = 11011.001.
+14. 1101 in 2's complement = -3.
+15. G is not a valid hexadecimal digit.
+16. 1010 → 0101 + 1 = 0110.
+17. Adding 1 to a 1's complement number gives the 2's complement.
+18. In hexadecimal, F = 15.
+19. 3 bits can represent 2³ = 8 values.
+20. Binary to octal conversion requires grouping bits from right to left.

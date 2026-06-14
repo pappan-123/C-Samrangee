@@ -149,29 +149,6 @@
       // 7 → 0111
 
       // 👉 Answer: 10100111
-
- What is Weighted Code ?
- What is BCD (Binary-Coded Decimal) ?
- ASCII,Unicode,BCD,84-2-1,ISCII etc
- What is 84-2-1 Code ?
-
- What is Non-Weighted Code ?  (Reflected Binary Code / Cyclic Code)
- Used at : Optical Rotary Encoders,K-map,Error Detection etc.  
- Gray Code,Express-3 code
- What is Gray Code ?
- Binary to Gray Code Conversion
- Gray Code to Binary Conversion
-
- What is Express-3 Code ?
- Express-3 Code to Binary Conversion
- Sum of decimal digits with the help of Express-3 Code
-
-
- What is Encoding Scheme ?
- ASCII,ISCII,Unicode etc
- What is ASCII ?
- What is ISCII ?
- What is Unicode ?
  
 
 // 1's and 2's complement of a Binary Number:

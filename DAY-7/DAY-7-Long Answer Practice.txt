@@ -1,0 +1,51 @@
+Question 1:
+
+Problem Statement:
+For the given Truth Table (TT), find the Canonical SOP form and minimize it to find the Minimal SOP expression.
+
+Truth Table:
+
+| A | B | Y |
+| --- | --- |
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+Question 2
+
+Simplify the Boolean function Y(A, B) given by the minterm sum notation:
+
+Y(A, B) = Σm(1, 2, 3)
+
+
+Question 3
+
+For the given Truth Table (TT), find the **Canonical POS form** and minimize it to find the **Minimal POS expression**.
+
+Truth Table:
+
+| A | B | Y |
+| --- | --- |
+| 0 | 0 | 1 |
+| 0 | 1 | 0 |
+| 1 | 0 | 1 |
+| 1 | 1 | 0 |
+
+
+Question 4
+
+Find both the canonical/minimal POS and SOP expressions for the given 3-variable truth table.
+
+Truth Table:
+
+| A | B | C | Y |
+| --- | --- | ---
+| 0 | 0 | 0 | 1 |
+| 0 | 0 | 1 | 0 |
+| 0 | 1 | 0 | 1 |
+| 0 | 1 | 1 | 1 |
+| 1 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 0 |
+| 1 | 1 | 0 | 1 |
+| 1 | 1 | 1 | 1 |
