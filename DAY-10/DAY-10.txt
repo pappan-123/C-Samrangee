@@ -1,0 +1,247 @@
+----------------------------------------------------------------------
+Q1. Consider an 32-bit architecture where 'int' takes 4 bytes and 'char' takes 1 byte. Look at the following code snippet:
+    int main() {
+        int arr[5] = {10, 20, 30, 40, 50};
+        int *ptr = arr;
+        printf("%d", *(ptr + 3) - *(ptr + 1));
+        return 0;
+    }
+What is the output?
+A) 8
+B) 2
+C) 20
+D) Compilation Error
+
+----------------------------------------------------------------------
+Q2. What will be the output of the following C program?
+    #include <stdio.h>
+    int main() {
+        char arr[] = "C-Programming";
+        char *p = arr;
+        p += 4;
+        printf("%c", *p++);
+        return 0;
+    }
+A) r
+B) o
+C) g
+D) r followed by o
+
+----------------------------------------------------------------------
+Q3. Examine the code below carefully:
+    #include <stdio.h>
+    int main() {
+        int arr[] = {10, 20, 30, 40, 50};
+        printf("%zu", sizeof(arr) / sizeof(arr[0]));
+        arr++;
+        printf(" %d", arr[0]);
+        return 0;
+    }
+What is the exact result of running this code?
+A) 5 20
+B) 5 10
+C) Compilation Error
+D) Runtime Segmentation Fault
+
+----------------------------------------------------------------------
+Q4. Given the declaration:
+    int matrix[4] = {1, 2, 3, 4};
+    int *p = matrix;
+Which of the following syntax is INVALID and will result in a compiler failure?
+A) p = &matrix[2];
+B) matrix = p + 1;
+C) int val = *(matrix + 2);
+D) int val2 = p[-1];
+
+----------------------------------------------------------------------
+Q5. What will be printed by the execution of this snippet?
+    #include <stdio.h>
+    int main() {
+        int a = 100;
+        int *p = &a;
+        printf("%p ", (void*)p);
+        p = p - 2;
+        printf("%p", (void*)p);
+        return 0;
+    }
+Assume 'p' initially points to memory address 0x7fff0008, and 'int' is 4 bytes.
+A) 0x7fff0008 0x7fff0006
+B) 0x7fff0008 0x7fff0000
+C) 0x7fff0008 0x7fff0004
+D) 0x7fff0008 0x7fff0010
+
+----------------------------------------------------------------------
+Q6. What happens if you execute the following block?
+    #include <stdio.h>
+    int main() {
+        int arr[] = {10, 20, 30};
+        int *ptr = arr;
+        printf("%d ", *ptr++);
+        printf("%d", *ptr);
+        return 0;
+    }
+A) 10 10
+B) 20 20
+C) 10 20
+D) 20 30
+
+----------------------------------------------------------------------
+Q7. Consider the expression combinations of * and ++. What is the equivalent meaning of the expression: *++ptr ?
+A) Increments the value pointed to by ptr, then returns it.
+B) Increments the pointer address first, then fetches the value at the new address.
+C) Fetches the value pointed to by ptr, then increments the pointer address.
+D) Fetches the value pointed to by ptr, then increments that value.
+
+----------------------------------------------------------------------
+Q8. Let's look at a subtle variation. What is the output of this code?
+    #include <stdio.h>
+    int main() {
+        int arr[] = {5, 15, 25};
+        int *ptr = arr;
+        printf("%d ", ++*ptr);
+        printf("%d", *ptr);
+        return 0;
+    }
+A) 5 6
+B) 6 6
+ arrogance
+C) 6 15
+D) 15 15
+
+----------------------------------------------------------------------
+Q9. What is the type of the variable 'arr' when declared as 'int arr[10];' inside a function block?
+A) int *
+B) int
+C) int[10] (Array of 10 integers)
+D) void *
+
+----------------------------------------------------------------------
+Q10. If 'arr' is an integer array name, which of the expressions below is NOT identical to the rest for accessing the 4th element?
+A) arr[3]
+B) 3[arr]
+C) *(arr + 3)
+D) *arr + 3
+
+----------------------------------------------------------------------
+Q11. What is the primary operational difference between a Function Declaration (Prototype) and a Function Definition?
+A) Declaration specifies execution logic; Definition specifies data attributes.
+B) Declaration introduces the name, parameters, and return type to the compiler; Definition provides the actual implementation body.
+C) Declarations are only for library functions; Definitions are only for user-defined functions.
+D) Definitions can be repeated multiple times; Declarations can only appear once.
+
+----------------------------------------------------------------------
+Q12. Study this C program structure:
+    #include <stdio.h>
+    void compute(int, int);
+    
+    int main() {
+        int a = 5, b = 10;
+        compute(a, b);
+        printf("%d %d", a, b);
+        return 0;
+    }
+    
+    void compute(int x, int y) {
+        x = x * 2;
+        y = y + 5;
+    }
+What is the final console output?
+A) 10 15
+B) 5 10
+C) 10 10
+D) 5 15
+
+----------------------------------------------------------------------
+Q13. In the program snippet from Q12, which terms accurately describe the variables (a, b) and (x, y)?
+A) (a, b) are Formal Parameters; (x, y) are Actual Parameters
+B) (a, b) are Actual Parameters; (x, y) are Formal Parameters
+C) Both are Formal Parameters
+D) Both are Actual Parameters
+
+----------------------------------------------------------------------
+Q14. What is the compilation status/output of the following snippet?
+    #include <stdio.h>
+    void testFunction() {
+        printf("Testing execution flow.");
+        return 55;
+    }
+    int main() {
+        testFunction();
+        return 0;
+    }
+A) Prints: Testing execution flow.
+B) Compilation Error: 'return' with a value, in function returning void.
+C) Runtime Crash
+D) Prints nothing
+
+----------------------------------------------------------------------
+Q15. Consider a function categorized as: "Without arguments and with return value". Which declaration correctly exemplifies this pattern?
+A) void evaluate(void);
+B) int evaluate(int x);
+C) int evaluate(void);
+D) void evaluate(int x);
+
+----------------------------------------------------------------------
+Q16. Identify the issue or the exact output of this recursive pointer function setup:
+    #include <stdio.h>
+    int* getPointer() {
+        int localizedValue = 42;
+        return &localizedValue;
+    }
+    int main() {
+        int *p = getPointer();
+        printf("%d", *p);
+        return 0;
+    }
+A) Guaranteed to always print 42 perfectly.
+B) Compilation error because you cannot return an address.
+C) Undefined behavior / Warning (returning address of a local automatic stack variable).
+D) Output is always 0.
+
+----------------------------------------------------------------------
+Q17. What will be the compiler reaction or runtime output of the following code?
+    #include <stdio.h>
+    int main() {
+        int val = sum(10, 20);
+        printf("%d", val);
+        return 0;
+    }
+    int sum(int x, int y) {
+        return x + y;
+    }
+A) It prints 30.
+B) Compilation warning or error depending on standards due to missing function prototype/declaration before invocation.
+C) Runtime linker crash.
+D) It prints 0.
+
+----------------------------------------------------------------------
+Q18. What is the evaluation order of parameters passed inside a function call expression, such as: `myFunc(a++, ++a);`?
+A) Left-to-right strictly guaranteed by the C standard.
+B) Right-to-left strictly guaranteed by the C standard.
+C) It is implementation-defined / unspecified by the C standard; depends on the compiler optimization.
+D) Simultaneously processed by CPU.
+
+----------------------------------------------------------------------
+Q19. Look at this combination of a function call and array pointer math:
+    #include <stdio.h>
+    void alternate(int *p) {
+        p[2] = 99;
+    }
+    int main() {
+        int arr[4] = {1, 2, 3, 4};
+        alternate(arr + 1);
+        printf("%d", arr[3]);
+        return 0;
+    }
+What is printed?
+A) 4
+B) 3
+C) 99
+D) Garbage value
+
+----------------------------------------------------------------------
+Q20. Which of the following statement is FALSE regarding functions and arrays in C?
+A) An array name decays into a pointer to its first element when passed as an argument to a function.
+B) C supports functions that can dynamically change their return types at runtime based on parameters.
+C) A function can have multiple return statements, but only one is executed during a single invocation call.
+D) Modular programming with functions facilitates isolated debugging and code maintenance.
