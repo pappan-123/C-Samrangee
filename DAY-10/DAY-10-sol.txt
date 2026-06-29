@@ -1,0 +1,60 @@
+Here are the correct answers with explanations:
+
+| Q       | Answer                                                                                    | Explanation                                                                                                                                                                                         |
+| ------- | ----------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Q1**  | ✅ **C) 20**                                                                               | `ptr+3` points to `40`, `ptr+1` points to `20`. So `40 - 20 = 20`.                                                                                                                                  |
+| **Q2**  | ✅ **B) o**                                                                                | `"C-Programming"` → Indexes: `C(0) -(1) P(2) r(3) o(4)...`. `p += 4` points to `'o'`. `*p++` prints `'o'`, then increments the pointer.                                                             |
+| **Q3**  | ✅ **C) Compilation Error**                                                                | `sizeof(arr)/sizeof(arr[0]) = 20/4 = 5`. But `arr++` is illegal because an array name is **not modifiable**.                                                                                        |
+| **Q4**  | ✅ **B) matrix = p + 1;**                                                                  | Array names are constant addresses; they cannot be assigned to. `p[-1]` is valid syntax (though may be invalid at runtime depending on location).                                                   |
+| **Q5**  | ✅ **B) 0x7fff0008 0x7fff0000**                                                            | `int` occupies 4 bytes. `p - 2` moves back `2 × 4 = 8` bytes. `0x7fff0008 - 8 = 0x7fff0000`.                                                                                                        |
+| **Q6**  | ✅ **C) 10 20**                                                                            | `*ptr++` is `*(ptr++)`. First prints `10`, then pointer moves to second element. Next `*ptr` prints `20`.                                                                                           |
+| **Q7**  | ✅ **B) Increments the pointer address first, then fetches the value at the new address.** | `*++ptr` = `*(++ptr)`. Pointer moves first, then dereferences.                                                                                                                                      |
+| **Q8**  | ✅ **B) 6 6**                                                                              | `++*ptr` means `++(*ptr)`. First element `5` becomes `6`, prints `6`. Next `*ptr` is also `6`.                                                                                                      |
+| **Q9**  | ✅ **C) int[10] (Array of 10 integers)**                                                   | Inside a function, `arr` is still an **array type**. It decays to a pointer only in most expressions.                                                                                               |
+| **Q10** | ✅ **D) *arr + 3**                                                                         | `arr[3]`, `3[arr]`, and `*(arr+3)` all access the 4th element. `*arr + 3` means first element plus 3.                                                                                               |
+| **Q11** | ✅ **B)**                                                                                  | A **declaration (prototype)** tells the compiler about the function. A **definition** contains the actual code.                                                                                     |
+| **Q12** | ✅ **B) 5 10**                                                                             | C uses **pass by value**. Changes to `x` and `y` don't affect `a` and `b`.                                                                                                                          |
+| **Q13** | ✅ **B)**                                                                                  | `a` and `b` are **actual arguments (parameters)**. `x` and `y` are **formal parameters**.                                                                                                           |
+| **Q14** | ✅ **B) Compilation Error** *(or at least a diagnostic)*                                   | A `void` function cannot legally `return 55;`. Modern compilers issue an error (or at least a warning treated as an error).                                                                         |
+| **Q15** | ✅ **C) int evaluate(void);**                                                              | No arguments and returns an `int`.                                                                                                                                                                  |
+| **Q16** | ✅ **C)**                                                                                  | Returning the address of a local variable is **undefined behavior** because the local variable ceases to exist after the function returns.                                                          |
+| **Q17** | ✅ **B)**                                                                                  | `sum()` is called before its declaration/prototype. Modern C standards do not allow implicit function declarations, so this results in a diagnostic (warning/error depending on compiler/settings). |
+| **Q18** | ✅ **C)**                                                                                  | The order of evaluation of function arguments is **unspecified** in C. Moreover, `myFunc(a++, ++a)` also modifies `a` more than once without sequencing, leading to **undefined behavior**.         |
+| **Q19** | ✅ **C) 99**                                                                               | `alternate(arr+1)` makes `p` point to `arr[1]`. `p[2]` refers to `arr[3]`, so `arr[3] = 99`.                                                                                                        |
+| **Q20** | ✅ **B)**                                                                                  | C functions have a **fixed return type** determined at compile time. They cannot dynamically change return types during execution.                                                                  |
+
+## Final Answer Key
+
+| Q  | Answer |
+| -- | ------ |
+| 1  | **C**  |
+| 2  | **B**  |
+| 3  | **C**  |
+| 4  | **B**  |
+| 5  | **B**  |
+| 6  | **C**  |
+| 7  | **B**  |
+| 8  | **B**  |
+| 9  | **C**  |
+| 10 | **D**  |
+| 11 | **B**  |
+| 12 | **B**  |
+| 13 | **B**  |
+| 14 | **B**  |
+| 15 | **C**  |
+| 16 | **C**  |
+| 17 | **B**  |
+| 18 | **C**  |
+| 19 | **C**  |
+| 20 | **B**  |
+
+### Important Exam Notes
+
+* `*ptr++` → `*(ptr++)` (use value, then increment pointer)
+* `*++ptr` → `*(++ptr)` (increment pointer first)
+* `++*ptr` → `++(*ptr)` (increment the value pointed to)
+* Array names are **not variables**; they cannot be assigned (`arr++`, `arr = ptr` are illegal).
+* `arr[i]` is exactly equivalent to `*(arr + i)` and even `i[arr]`.
+* C always uses **pass by value**.
+* Returning the address of a local variable results in **undefined behavior**.
+* Function arguments are evaluated in an **unspecified order** by the C standard.
