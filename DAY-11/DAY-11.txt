@@ -1,0 +1,196 @@
+Q1. What happens if a recursive function in C lacks a proper base case?
+A) The program compiled with a warning and terminates successfully.
+B) The function executes infinitely until a stack overflow occurs.
+C) The compiler automatically inserts a base case at 'return 0;'.
+D) The program yields a random garbage value instantly.
+
+Q2. Consider the following C function:
+
+int fun(int n) {
+    if (n == 0) return 0;
+    return n + fun(n - 1);
+}
+
+If fun(4) is called, how many total stack frames (including the initial call) will be created before the final result is returned?
+A) 4
+B) 5
+C) 3
+D) 1
+
+Q3. Which memory area is primarily utilized to keep track of local variables and return addresses during recursive function calls?
+A) Heap Memory
+B) Data Segment
+C) Stack Memory
+D) Code Segment
+
+Q4. Any problem that can be solved using recursion can also be solved using iteration. What is the main trade-off when choosing recursion over iteration?
+A) Recursion always consumes less execution time.
+B) Recursion often leads to cleaner code but carries extra memory overhead.
+C) Iteration lacks the capacity to solve problems like the Tower of Hanoi.
+D) Recursive code is inherently less prone to logical errors.
+
+Q5. Predict the output of the following code snippet:
+ 
+#include <stdio.h>
+void count(int n) {
+    if (n == 0) return;
+    count(n - 1);
+    printf("%d ", n);
+}
+int main() {
+    count(3);
+    return 0;
+}
+
+A) 3 2 1
+B) 1 2 3
+C) 3 3 3
+D) 0 1 2 3
+
+Q6. What is the fundamental difference between the "base case" and the "recursive case"?
+A) The base case calls the function again; the recursive case terminates it.
+B) The base case initializes global variables; the recursive case uses local variables.
+C) The base case stops further self-invocation; the recursive case breaks the problem down into a smaller instance.
+D) The recursive case is only evaluated by the compiler at compile time.
+
+Q7. When you pass a 1D array to a function as an argument, what is actually passed to the formal parameter?
+A) A completely new, duplicated copy of the entire array.
+B) The total size of the array in bytes.
+C) The value stored inside the final element of the array.
+D) The base address of the first element (&arr[0]).
+
+Q8. Consider this code fragment:
+
+void modify(int arr[]) {
+    arr[0] = 99;
+}
+int main() {
+    int data[] = {10, 20, 30};
+    modify(data);
+    printf("%d", data[0]);
+}
+
+What is the output of the program?
+A) 10
+B) 99
+C) Compilation Error: Arrays cannot be modified inside void functions.
+D) Garbage value.
+
+Q9. Inside a function defined as 'void process(int *ptr)', which of the following expressions is syntactically identical to accessing the 4th element (ptr[3]) of the array?
+A) *(ptr + 3)
+B) *ptr + 3
+C) ptr + 3
+D) &ptr[3]
+
+Q10. Look at the following 2D array function declaration:
+
+void display(int arr[2][2]) { /* ... */ }
+
+
+If you pass a 2D array to this function, how does C view the internal structure to find elements?
+A) It treats it as a single row of disconnected pointers.
+B) It maps elements linearly in memory using row-major order via its base address.
+C) It automatically dynamically allocates memory on the Heap.
+D) It completely treats it as Call by Value, protecting the main matrix elements.
+
+Q11. If 'int sample[5] = {1, 2, 3, 4, 5};' is passed to a function 'void check(int *p)', what does the expression '*(p + 1) += 2' do?
+A) It changes the first element from 1 to 3.
+B) It changes the second element from 2 to 4 in the original array.
+C) It creates an error because pointers cannot use arithmetic operators.
+D) It adds 2 to the memory address instead of the value.
+
+Q12. What does the following program print?
+
+#include <stdio.h>
+void change(int a[]) {
+    a[1] = 500;
+}
+int main() {
+    int b[2] = {100, 200};
+    change(b);
+    printf("%d", b[1]);
+    return 0;
+}
+
+
+A) 200
+B) 100
+C) 500
+D) Runtime Crash
+
+
+Q13. Which statement accurately identifies the "actual parameters" in a C program?
+A) The variable names declared in the function's header definition block.
+B) The expressions or variables passed inside the parenthesis during a function call statement.
+C) Global variables declared at the very top of the source file.
+D) Local return registers within the CPU.
+
+Q14. In C, what happens to the original variable when it is passed to a function using Call by Value?
+A) The original variable is updated instantly with any modifications inside the function.
+B) A local copy is allocated on the stack; changes inside the function do not affect the original variable.
+C) The compiler issues an automatic error if you attempt to assign values to that parameter.
+D) The variable is permanently cast to a global constant type.
+
+Q15. To implement Call by Reference effectively in C, what must be passed during the function call, and what must the formal parameter be?
+A) Pass the variable name; formal parameter must be an array.
+B) Pass the address using '&'; formal parameter must be a pointer '*'.
+C) Pass a constant value; formal parameter must be a global variable.
+D) Pass the pointer '*'; formal parameter must use the '&' operator.
+
+Q16. Analyze the code segment below:
+
+#include <stdio.h>
+void demo(int x) {
+    x = x * 2;
+}
+int main() {
+    int val = 15;
+    demo(val);
+    printf("%d", val);
+    return 0;
+}
+
+What is the output?
+A) 30
+B) 15
+C) 0
+D) Compilation Error
+
+Q17. Suppose you have a variable 'int y1;' declared inside a function named 'add()'. If you try to write 'x = y1;' inside the 'main()' function, what happens?
+A) The value of 'y1' is successfully fetched because all variables are shared.
+B) A compilation error occurs because 'y1' is local to 'add()' and out of scope in 'main()'.
+C) 'x' is assigned a zero because 'y1' resets outside its function.
+D) The program links automatically if 'y1' is marked as a reference.
+
+Q18. What is the fundamental utility of global variables over local variables?
+A) They can be protected from modifications using pointer logic.
+B) They require less memory space during multi-threaded calculations.
+C) They are accessible throughout the entire program across all functions.
+D) They cannot be modified by reference mechanisms.
+ 
+
+Q19. Look at the code below designed to add and subtract two numbers using call by reference:
+
+void process(int *x, int *y) {
+    int sum = *x + *y;
+    int diff = *x - *y;
+    *x = sum;
+    *y = diff;
+}
+int main() {
+    int a = 10, b = 4;
+    process(&a, &b);
+    printf("%d %d", a, b);
+}
+
+What will be printed by the printf statement?
+A) 10 4
+B) 14 6
+C) 6 14
+D) 14 -6
+
+Q20. If you accidentally pass regular variables instead of addresses to a function expecting pointers (e.g., calling swap(a, b) instead of swap(&a, &b) where the definition is void swap(int *x, int *y)), what will happen?
+A) The program runs perfectly but swaps slower.
+B) The C compiler will throw a type-mismatch compilation error.
+C) The values will swap in the stack but won't alter main().
+D) The operating system automatically converts the variables into addresses.

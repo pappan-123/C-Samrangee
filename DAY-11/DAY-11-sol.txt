@@ -1,0 +1,23 @@
+# ========================================================================
+ANSWER KEY WITH EXPLANATIONS
+
+Q1  -> B | Without a base case, the function calls itself indefinitely until it runs out of stack memory space.
+Q2  -> B | Stack frames are made for: fun(4), fun(3), fun(2), fun(1), and fun(0). Total = 5 frames.
+Q3  -> C | Stack memory holds function activation records (frames) which contain local parameters and return paths.
+Q4  -> B | Recursion is clean and readable for algorithms like trees/Hanoi, but it adds processing time and memory for multiple stack allocation records.
+Q5  -> B | This is structural deferred execution. The print happens *after* the recursive call unwinds, yielding 1 2 3.
+Q6  -> C | Base case acts as a circuit breaker to halt recursion; recursive case calls a reduced sub-problem instance.
+Q7  -> D | C always passes arrays by passing the pointer to the very first item (&arr[0]), minimizing copying overhead.
+Q8  -> B | Since the base address is sent, manipulating elements internally edits the true array in the outer scope.
+Q9  -> A | Pointer offset dereferencing formula states that arr[i] is identical to *(arr + i).
+Q10 -> B | Multi-dimensional structures map to contiguous physical memory tracks. Knowing the bounds helps compute layout indexes.
+Q11 -> B | *(p + 1) targets index 1 (the 2nd element). += 2 updates its original state from 2 to 4.
+Q12 -> C | Modifying a[1] changes b[1] inside main because the array is processed via its base address.
+Q13 -> B | Actual parameters are the authentic data entities passed directly inside a calling statement.
+Q14 -> B | Call by value generates an isolated replica. The outer caller's environment parameters remain completely untouched.
+Q15 -> B | Passing an address requires &var in caller argument lists and pointer receivers *param in target functions.
+Q16 -> B | Because it is a call-by-value execution, multiplying x locally leaves val untouched at its initial value of 15.
+Q17 -> B | Local parameters are bound strictly to their parent function scopes and cannot be resolved externally.
+Q18 -> C | Global data elements are active and accessible universally across all functional scopes in the scope file.
+Q19 -> B | sum = 10 + 4 = 14. diff = 10 - 4 = 6. Assigning them back changes a to 14 and b to 6.
+Q20 -> B | Passing an integer directly where an int* pointer address is expected results in a strict compiler validation error.
